@@ -1,0 +1,833 @@
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+.Welcome{
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    background: #272727;
+    color: white;
+    /* border: solid gray 2px; */
+    position: relative;
+}
+.second_welcome{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+.ibile{
+    width: 100%;
+    height: 85%;
+    display: flex;
+    /* border: solid green 1px; */
+}
+.isaiah{
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+    height: 15%;
+    justify-content: center;
+    display: flex;
+    /* border: solid blue 1px; */
+}
+.Sean1{
+    height: 100%;
+    width: 20%;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    /* border: solid red 3px; */
+}
+.Sean2{
+    height: 100%;
+    width: 80%;
+    display: flex;
+    border-left: solid rgb(42, 55, 61) 5px;
+    flex-direction: column;
+}
+.feel1{
+    width: 100%;
+    height: 15%;
+    display: flex;
+}
+.feel2{
+    width: 100%;
+    height: 100%;
+    max-height: 85%;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding-top: 1%;
+    padding-left: 1%;
+    /* background: url('../10\ Ways\ Creative\ People\ Constantly\ Stay\ Inspired.jpeg'); */
+    box-shadow: inset 4px 2px 20px 10px rgb(0 0 0);
+    overflow-y: auto;
+}
+.wahala{
+    height: 100%;
+    width: 95%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    padding-left: 2%;
+    position: relative;
+}
+.forfontawsome{
+    height: 8%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 13px;
+    border-bottom: solid rgb(42, 55, 61) 5px;
+}
+.homeone{
+    height: 8%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    /* border: solid saddlebrown; */
+    margin-bottom: 5px;
+    gap: 10px;
+    cursor: pointer;
+    padding: 5px;
+    border-radius: 10px;
+    font-size: 13px;
+}
+.akda{
+    display: flex;
+    align-items: center;
+}
+.iyakes{
+    display: flex;
+    align-items: center;
+    background: #4d4d4d;
+    padding: 5px;
+    border-radius: 8px;
+    width: 95%;
+
+}
+.iyakes input{
+    background: none;
+    border: none;
+    outline: none;
+    padding: 4px;
+    height: 100%;
+    width: 100%;
+    font-size: 1em;
+    font-weight: 600;
+    padding: 0 5px;
+    color: white;
+}
+.iyakes img{
+    height: 25px;
+    width: 25px;
+}
+.bassman{
+    height: 8%;
+    width: 100%;
+    font-size: 13px;
+    display: flex;
+    align-items: center;
+    /* border: solid saddlebrown; */
+    gap: 10px;
+    position: absolute;
+    border-radius: 10px;
+    bottom: 0;
+    cursor: pointer;
+    padding: 5px;
+}
+.fever{
+    height: 30px;
+    width: 30px;
+    display: flex;
+    align-items: center;
+    border-radius: 5px;
+    background: #4d4d4d;
+    justify-content: center;
+}
+/* FONTAWSOME AREA (IMAGE) */
+.fever img{
+    height: 25px;
+    width: 25px;
+}
+.bassman img{
+    height: 25px;
+    width: 25px;
+}
+.forfontawsome img{
+    height: 25px;
+    width: 25px;
+}
+.forLuv{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+.forLuv1{
+    height: 57%;
+    width: 100%;
+    display: flex;
+    user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    align-items: center;
+}
+.forLuv2{
+    height: 43%;
+    width: 100%;
+    align-items: center;
+    display: flex;
+    user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+}
+.mich{
+    height: 100%;
+    display: flex;
+    align-items:center ;
+    padding-left: 3%;
+    width: 100%;
+}
+.menz{
+    height: 70%;
+    width: 100%;
+    display: flex;
+}
+.menz1{
+    height:100%;
+    width:30%;
+    display:flex;
+}
+.menz2{
+    height:100%;
+    width:55%;
+    display:flex;
+}
+.menz3{
+    height:100%;
+    width:15%;
+    display:flex;
+}
+.trackname{
+    height: 100%;
+    padding-left: 3%;
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+.imagetag{
+    height: 90%;
+    width: 25%;
+    display: flex;
+    justify-content: center;
+    border-radius: 10px;
+    overflow: hidden;
+    align-items: center;
+}
+.trackinfo{
+    height: 100%;
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    padding-left: 10px;
+    overflow: hidden;
+}
+.artistpictures{
+    height: 100%;
+    width: 100%;
+    display: flex;
+}
+.fearGod{
+    height: 100%;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+}
+.teknoq{
+    height: 40px;
+    width: 40px;
+    cursor: pointer;
+}
+.teknoq1{
+    height: 20px;
+    width: 20px;
+    cursor: pointer;
+}
+.teknoq2{
+    cursor: pointer;
+    height: 70px;
+    width: 70px;
+}
+.treins{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.musicprogress{
+    height: 30%;
+    width: 95%;
+    /* border: groove; */
+}
+.progreessing{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+.progress_it_self{
+    height: 4px;
+    cursor: pointer;
+    border-radius: 5px;
+    width: 85%;
+    accent-color: rgb(71, 129, 245);
+}
+.feel2::-webkit-scrollbar{
+    width: 8px;
+    background: rgb(42, 55, 61) ;
+}
+.feel2::-webkit-scrollbar-thumb{
+    border-radius: 5px;
+    width: 2px;
+    background: rgb(14, 65, 90) ;
+}
+.inchains{
+    height: auto;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    align-items: center;
+}
+.inchains1{
+    height:150px;
+    width: 150px;
+    background: green;
+    display: flex;
+    border: groove;
+    background-color: rgb(21, 6, 88);
+}
+.akd{
+    display: flex;
+    position: relative;
+}
+.favour1{
+    position: absolute;
+    display: flex;
+    align-items: center;
+    top: -27%;
+    width: auto;
+    height: 48px;
+    padding: 0 4px;
+    border: solid 2px #e3a12e82;
+    background: #081b3a94;
+    border-radius: 10px;
+    z-index: 200;
+    width: 234%;
+    justify-content: center;
+    backdrop-filter: blur(3px);
+}
+.easy{
+    display: flex;
+}
+.volume1{
+    height: 4px;
+    accent-color: #4781f5;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 90%;
+}
+.mich1{
+    height: 100%;
+    display: flex;
+    align-items:center ;
+    padding-left: 3%;
+    width: 100%;
+}
+
+.adie{
+    display: none;
+}
+.samething{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.andee{
+    height: 100%;
+    width: calc(90% / 2);
+    display: flex;
+    align-items: center;
+    
+    border: green;
+}
+.paradisees{
+    width: 80px;
+    outline: none;
+    border: none;
+    border-radius: 10px;
+    height: 85%;
+    gap: 2px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgb(53, 54, 53);
+    font-size: 15px;
+    padding: 6px;
+    color: white;
+    cursor: pointer;
+    font-weight: 900;
+}
+.alright{
+    display: flex;
+    background:  rgb(53, 54, 53);
+    font-size: 15px;
+    margin-right:3%;
+    padding-left:5px;
+    cursor: pointer;
+    padding-right:3px;
+    color: white;
+    font-weight: 600;
+    height: 81%;
+    border-radius: 5px;
+    align-items: center;
+    position: relative;
+    gap: 2px;
+    transition: 1.5s linear;
+}
+
+
+.airport{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1%;
+    border-radius: 5px;
+    width: auto;
+    cursor: pointer;
+    gap: 5px;
+    background: rgb(53, 54, 53);
+}
+.airport img{
+    width: 25px;
+    height: 25px;
+}
+.thewane{
+    display: none;
+    cursor: pointer;
+}
+.airport p{
+    font-weight: 600;
+}
+.shejustagirl{
+    height: 100%;
+    display: flex;
+    align-items: center;
+    width: auto;
+    width: 10%;
+    gap: 3px;
+}
+.tonight{
+    display: flex;
+    width: 100%;
+    height: 100%;
+    justify-content: space-evenly;
+    align-items: center;
+}
+.babay{
+    height: 100%;
+    width: 70%;
+    display: flex;
+    align-items: center;
+}
+.seaman{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+.fight1{
+    height: 100%;
+    width: 40%;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+}
+.fight2{
+    height: 100%;
+    width: 60%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center ;
+}
+.paulfa{
+    height: 100%;
+    display: flex;
+    align-items: center;
+    display: flex;
+    font-size: 14px;
+    color: white;
+    font-weight: 900;
+    gap: 2px;
+    transition: 1.5s linear;
+}
+.paulfa select{
+    background: none;
+    -o-appearance: none;
+    -ms-appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    border: none;
+    width: auto;
+    display: flex;
+    align-items: center;
+    outline: none;
+    font-size: 14px;
+    font-weight: 900;
+    color: rgb(25, 83, 131);
+    border-radius: 3px
+}
+.videocloset{
+    display: none;
+}
+.pine{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2%;
+    width: auto;
+    border-radius: 5px;
+    background: rgb(53, 54, 53);
+}
+.pine p{
+    font-size: 14px;
+    font-weight: 600;
+    color: white;
+}
+.ability{
+    display: flex;
+    position: relative;
+}
+.uranuim{
+    box-shadow: 0 0 5px 0px #2dcaf5;
+    display: flex;
+    z-index: 100;
+    height: 180px;
+    width: 160px;
+    position: absolute !important;
+    bottom: 58%;
+    border-radius: 5px;
+    right: 53%;
+    padding: 1% 2%;
+    background: rgb(53, 54, 53);
+}
+.appolo{
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    width:100%;
+    padding: 0 3%;
+    position: relative;
+    justify-content: space-evenly;
+}
+.onthelow{
+    display: flex;
+    align-items: center;
+    padding: 3px;
+    cursor: pointer;
+    gap: 3px;
+}
+.gi{
+    padding: 7px !important;
+}
+.onthelow:hover{
+    background: rgb(66, 67, 66);
+}
+.onthelow img{
+    height: 20px;
+    width: 20px;
+}
+.ess{
+    height: 30px;
+    width: 30px;
+
+    background: #4d4d4d;
+    border-radius: 5px;
+    padding: 5px;
+    display: flex;
+    justify-content:center;
+    align-items: center;
+}
+.glory{
+    display: flex;
+}
+.seconda{
+    display: none;
+}
+.howwe{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2%;
+    width: auto;
+    border-radius: 5px;
+    background: rgb(53, 54, 53);
+}
+.howwe p{
+    font-size: 14px;
+    font-weight: 600;
+    color: white;
+}
+.stock{
+    justify-content: space-evenly;
+    align-items: center;
+    display: flex;
+}
+.inchains div:nth-child(even){
+    background: rgb(84, 84, 86);
+}
+.breakingheart{
+    height: 40px;
+    width: 95%;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    background: rgb(57, 57, 57);
+    overflow: hidden;
+    cursor: pointer;
+}
+.breakingheart:hover{
+    background:rgb(33, 51, 60) !important;
+}
+.dovesst{
+    background:rgb(33, 51, 60) !important;
+}
+.welcomenmen{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    /* flex-direction: column; */
+    align-items: center;
+    font-size: 16px;
+    font-weight: 600;
+}
+.welcomenmen1{
+    height: 200px;
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    font-size: 16px;
+    font-weight: 600;
+}
+.musicName{
+    height: 100%;
+    width: 70%;
+    display: flex;
+    overflow: hidden;
+    /* border: groove; */
+    align-items: center;
+}
+.fileSize{
+    height: 100%;
+    align-items: center;
+    overflow: hidden;
+    width: 10%;
+    display: flex;
+    /* border: groove; */
+}
+.Duration{
+    height: 100%;
+    width: 10%;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    /* border: groove; */
+}
+.vibess{
+    display: flex;
+    width: 100%;
+    flex-wrap: wrap;
+    gap: 20px;
+    height: auto;
+    padding: 2%;
+    justify-content: center;
+    background:transparent;
+}
+.breakingheartvideo{
+    height: auto;
+    width: 200px;
+    display: flex;
+    flex-direction: column;
+    padding: 1%;
+    border-radius: 10px;
+    border: solid 1px #3b3939;
+    overflow-x: hidden;
+    z-index: 2;
+}
+.breakingheartvideo:hover{
+    background: rgb(54, 54, 55);
+}
+.aunty{
+    height: 100%;
+    width: 100%;
+    display: flex;
+}
+.heartattack{
+    display: flex;
+    overflow: hidden;
+    flex-wrap: wrap;
+    width: 100%;
+}
+.termintorw{
+    height: 3px;
+    width: 0;
+    z-index: 10;
+    position: fixed;
+    display: inline-block;
+    align-items: center;
+    justify-content: center;
+    left: 0;
+    bottom: 0;
+    background: rgb(255, 255, 255);
+    margin: auto;
+    border-radius: 50%;
+    color: white;
+    animation: gertrude 2s linear infinite;
+}
+@keyframes gertrude {
+    100%{
+        width: 100%;
+    }
+}
+.totorime{
+    background: rgb(92, 92, 93) !important;
+}
+.sunny{
+    height: 20px;
+    width: 20px;
+    display: flex;
+   
+    background: skyblue;
+}
+.topboy{
+    height: 100%;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+}
+.onmy{
+    /* display: flex; */
+    position: relative;
+}
+.superman{
+    position: absolute;
+    width: 150px;
+    background: #081b3a94;
+    display: flex;
+    height: auto;
+    z-index: 110;
+    left: -107px;
+    align-items: center;
+    border: solid 2px #e3a12e82;
+    border-radius: 10px;
+    transform: rotate(90deg);
+}
+.speedman1{
+    height: auto;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column-reverse;
+    align-items: center;
+    padding: 5px;
+}
+.speedman2{
+    display: flex;
+    width: 95%;
+    justify-content: space-around;
+}
+.speedman2 p{
+    transform: rotate(270deg);
+}
+.speedman3{
+    flex-direction: column;
+    height: auto;
+    width: 100%;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    display: flex;
+    align-items: center;
+}
+.civilmeter{
+    height: 4px;
+    accent-color: #4781f5;
+    border-radius: 5px;
+    width: 90%;
+    cursor: pointer;
+}
+.ballkall{
+    position: relative;
+}
+
+.justof{
+    display: none !important;
+}
+.fansyon{
+    display: flex;
+}
+.london{
+    height: auto;
+    width: 130px;
+    display: flex;
+    position: absolute;
+    flex-direction: column;
+    padding: 5px;
+    left: 31px;
+    background:rgb(53, 54, 53);
+    top: 40px;
+    border-radius: 5px;
+    box-shadow: 0 0 5px 0px #2dcaf5;
+    justify-content: center;
+}
+.alright  p{
+    color: rgb(80, 127, 165) ;
+    font-weight: 900 !important;
+}
+.london  p{
+    color: rgb(80, 127, 165) ;
+    font-weight: 900 !important;
+    border-radius: 5px;
+    font-size: 13px;
+    padding: 5px;
+}
+.london p:hover{
+    background: rgb(84, 84, 86);
+}
+.oniun{
+    display: flex ;
+}
+.offuin{
+    display: none ;
+}
+.smmae{
+    position: relative;
+}

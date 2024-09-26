@@ -227,7 +227,6 @@ function ego() {
         realm = __get_fromStorage__('ReturnAudio');
         inchains.querySelector('.inchains')
         for (let B = 0; B < realm.length; B++) {
-    
             let forMusic = createEle('div');
             forMusic.className = 'breakingheart';
             forMusic.innerHTML = `
@@ -260,9 +259,9 @@ function ego() {
             wizkid2 = document.querySelector('.wizkid2');
             wizkid2.innerHTML = InternalMusic.length;
         
-            clickToPlayFromLIst()
         }
-  
+        clickToPlayFromLIst()
+    
 }
 function VideoSink(tap) {
     if (tap.toLowerCase() == 'video') {
@@ -350,7 +349,7 @@ function ToreturnVideostoPlaylist() {
 function clickToPlayFromLIst(){
     if(LoadFromStorage() != 0){
         let breakingheart = document.querySelectorAll('.breakingheart');
-    breakingheart.forEach((pre, twopack) => {
+        breakingheart.forEach((pre, twopack) => {
         pre.addEventListener('click', function () {
             track_index = twopack;
             let dovesst = document.querySelector('.dovesst');
@@ -366,17 +365,19 @@ function clickToPlayFromLIst(){
             pre.classList.add('dovesst');
             wizkid = document.querySelector('.wizkid');
             wizkid.innerHTML = track_index + 1 + '/';
+             })
         })
-    })
-    }else{
+        return
+    }
+        let breakingheart = document.querySelectorAll('.breakingheart');
         breakingheart.forEach((pre, twopack) => {
             pre.addEventListener('click', function () {
                 track_index = twopack;
                 let dovesst = document.querySelector('.dovesst');
                 let mynameis = document.querySelector('.mynameis')
                 setInterval(setUpdate, 1000)
-                AudioPlayer.src = NewMusicRoot() + music_list[track_index].trackName;
-                mynameis.innerHTML = music_list[track_index].trackName.toString().replace('.mp3', '')
+                AudioPlayer.src = NewMusicRoot() + InternalMusic[track_index].trackName;
+                mynameis.innerHTML = InternalMusic[track_index].trackName.toString().replace('.mp3', '')
                 AudioPlayer.play()
                 teknoq2.src = './icons/pause.png';
                 if (dovesst !== null) {
@@ -387,7 +388,6 @@ function clickToPlayFromLIst(){
                 wizkid.innerHTML = track_index + 1 + '/';
             })
         })
-    }
 }
 
 // this function makes the music play after finishing but update is coming for it
@@ -401,35 +401,34 @@ function controlspeeding(){
 }
 
 function NextTrack() {
-    if(LoadFromStorage() != 0){
-        if(localStorage.getItem('randomise') !== null && JSON.parse(localStorage.getItem('randomise')) == true){
-            is_random = true;
-        }
-            music_list = __get_fromStorage__('ReturnAudio')
-        if (track_index < music_list.length - 1 && is_random == false){
+    if(localStorage.getItem('randomise') !== null && JSON.parse(localStorage.getItem('randomise')) == true){
+        is_random = true;
+    }
+    if(LoadFromStorage() != 0){           
+        if (track_index < __get_fromStorage__('ReturnAudio').length - 1 && is_random == false){
+            track_index += 1;
             wizkid = document.querySelector('.wizkid')
             mynameis = document.querySelector('.mynameis')
-            track_index += 1;
             wizkid.innerHTML = track_index + 1 + '/';
             mynameis.innerHTML = MusicRoot(track_index).toString().replace('.mp3', '')
             AudioPlayer.src = MusicLocation() + MusicRoot(track_index)
-        }else if(track_index < music_list.length - 1 && is_random == true){
-            let randommings = Math.floor(Math.random() * music_list.length);
+        }else if(track_index < __get_fromStorage__('ReturnAudio').length - 1 && is_random == true){
+            let randommings = Math.floor(Math.random() * __get_fromStorage__('ReturnAudio').length);
             track_index = randommings;
             wizkid = document.querySelector('.wizkid')
             mynameis = document.querySelector('.mynameis')
             wizkid.innerHTML = track_index + 1 + '/';
             mynameis.innerHTML = MusicRoot(track_index).toString().replace('.mp3', '')
             AudioPlayer.src = MusicLocation() + MusicRoot(track_index)
-        }else if(track_index >= music_list.length -1 && is_random == false){
+        }else if(track_index >= __get_fromStorage__('ReturnAudio').length -1 && is_random == false){
             track_index = 0;
             wizkid = document.querySelector('.wizkid')
             mynameis = document.querySelector('.mynameis')
             wizkid.innerHTML = track_index + 1 + '/';
             mynameis.innerHTML = MusicRoot(track_index).toString().replace('.mp3', '')
             AudioPlayer.src = MusicLocation() + MusicRoot(track_index) 
-        }else if(track_index >= music_list.length - 1 && is_random == true){
-            let randommings = Math.floor(Math.random() * music_list.length);
+        }else if(track_index >= __get_fromStorage__('ReturnAudio').length - 1 && is_random == true){
+            let randommings = Math.floor(Math.random() * __get_fromStorage__('ReturnAudio').length);
             track_index = randommings;
             wizkid = document.querySelector('.wizkid')
             mynameis = document.querySelector('.mynameis')
@@ -442,40 +441,44 @@ function NextTrack() {
         currPlay(track_index);
         return;
     }
-    if(track_index < music_list.length - 1 && is_random == false){
+    if(localStorage.getItem('randomise') !== null && JSON.parse(localStorage.getItem('randomise')) == true){
+        is_random = true;
+    }
+    if(track_index < InternalMusic.length - 1 && is_random == false){
         track_index += 1;
         wizkid = document.querySelector('.wizkid')
         mynameis = document.querySelector('.mynameis')
         wizkid.innerHTML = track_index + 1 + '/';
-        mynameis.innerHTML = music_list[track_index].trackName.toString().replace('.mp3', '')
-        AudioPlayer.src = NewMusicRoot() + music_list[track_index].trackName
-    }else if(track_index < music_list.length - 1 && is_random == true){
-        let randomIndex = music_list[Math.floor(Math.random() * music_list.length)];
+        mynameis.innerHTML = InternalMusic[track_index].trackName.toString().replace('.mp3', '')
+        AudioPlayer.src = NewMusicRoot() + InternalMusic[track_index].trackName
+    }else if(track_index < InternalMusic.length - 1 && is_random == true){
+        let randomIndex = Math.floor(Math.random() * InternalMusic.length);
         track_index = randomIndex;
         wizkid = document.querySelector('.wizkid')
         mynameis = document.querySelector('.mynameis')
-        wizkid.innerHTML = track_index + 1 + '/';
-        mynameis.innerHTML = music_list[track_index].trackName.toString().replace('.mp3', '')
-        AudioPlayer.src = NewMusicRoot() + music_list[track_index].trackName
-    }else if(track_index >= music_list.length - 1 && is_random == false){
+        wizkid.innerHTML = track_index +1 + '/';
+        mynameis.innerHTML = InternalMusic[track_index].trackName.toString().replace('.mp3', '')
+        AudioPlayer.src = NewMusicRoot() + InternalMusic[track_index].trackName
+    }else if(track_index >= InternalMusic.length - 1 && is_random == false){
         track_index = 0;
         wizkid = document.querySelector('.wizkid')
         mynameis = document.querySelector('.mynameis')
         wizkid.innerHTML = track_index + 1 + '/';
-        mynameis.innerHTML = music_list[track_index].trackName.toString().replace('.mp3', '')
-        AudioPlayer.src = NewMusicRoot() + music_list[track_index].trackName
-    }else if(track_index >= music_list.length - 1 && is_random == true){
-        let randomIndex = music_list[Math.floor(Math.random() * music_list.length)];
+        mynameis.innerHTML = InternalMusic[track_index].trackName.toString().replace('.mp3', '')
+        AudioPlayer.src = NewMusicRoot() + InternalMusic[track_index].trackName
+    }else if(track_index >= InternalMusic.length - 1 && is_random == true){
+        let randomIndex = Math.floor(Math.random() * InternalMusic.length);
         track_index = randomIndex;
         wizkid = document.querySelector('.wizkid')
         mynameis = document.querySelector('.mynameis')
         wizkid.innerHTML = track_index + 1 + '/';
-        mynameis.innerHTML = music_list[track_index].trackName.toString().replace('.mp3', '')
-        AudioPlayer.src = NewMusicRoot() + music_list[track_index].trackName
+        mynameis.innerHTML = InternalMusic[track_index].trackName.toString().replace('.mp3', '')
+        AudioPlayer.src = NewMusicRoot() + InternalMusic[track_index].trackName
     }else{
         track_index = 0;
     }
-    currPlay(track_index);
+        currPlay(track_index);
+    
 }
 
 function currPlay(d) {
@@ -507,28 +510,27 @@ if(LoadFromStorage() != 0){
     if(localStorage.getItem('randomise') !== null && JSON.parse(localStorage.getItem('randomise')) == true){
         is_random = true;
     }
-        music_list = __get_fromStorage__('ReturnAudio')
-    if(track_index < music_list.length - 1 && is_random == false){
+    if(track_index < __get_fromStorage__('ReturnAudio').length - 1 && is_random == false){
         track_index += 1;
         wizkid.innerHTML = track_index + 1 + '/';
         mynameis.innerHTML = MusicRoot(track_index).toString().replace('.mp3', '')
         AudioPlayer.src = MusicLocation() + MusicRoot(track_index)
         playing()
-    }else if(track_index < music_list.length - 1 && is_random == true){
-        let showmeluv = Math.floor(Math.random() * music_list.length)
+    }else if(track_index < __get_fromStorage__('ReturnAudio').length - 1 && is_random == true){
+        let showmeluv = Math.floor(Math.random() * __get_fromStorage__('ReturnAudio').length)
         track_index = showmeluv;
         wizkid.innerHTML = track_index + 1 + '/';
         mynameis.innerHTML = MusicRoot(track_index).toString().replace('.mp3', '')
         AudioPlayer.src = MusicLocation() + MusicRoot(track_index)
         playing()
-    }else if(track_index >= music_list.length - 1 && is_random == false){
+    }else if(track_index >= __get_fromStorage__('ReturnAudio').length - 1 && is_random == false){
         track_index = 0;
         wizkid.innerHTML = track_index + 1 + '/';
         mynameis.innerHTML = MusicRoot(track_index).toString().replace('.mp3', '')
         AudioPlayer.src = MusicLocation() + MusicRoot(track_index)
         playing()
-    }else if(track_index >= music_list.length - 1 && is_random == true){
-        let showmeluv = Math.floor(Math.random() * music_list.length)
+    }else if(track_index >= __get_fromStorage__('ReturnAudio').length - 1 && is_random == true){
+        let showmeluv = Math.floor(Math.random() * __get_fromStorage__('ReturnAudio').length)
         track_index = showmeluv;
         wizkid.innerHTML = track_index + 1 + '/';
         mynameis.innerHTML = MusicRoot(track_index).toString().replace('.mp3', '')
@@ -538,48 +540,57 @@ if(LoadFromStorage() != 0){
         track_index = 0;
     }
         currPlay(track_index);
-        return;
+    return    
+}
+    if(localStorage.getItem('randomise') !== null && JSON.parse(localStorage.getItem('randomise')) == true){
+        is_random = true;
+    }
+    if(track_index < InternalMusic.length - 1 && is_random == false){
+        track_index += 1;
+        wizkid = document.querySelector('.wizkid')
+        mynameis = document.querySelector('.mynameis')
+        wizkid.innerHTML = track_index + 1 + '/';
+        mynameis.innerHTML = InternalMusic[track_index].trackName.toString().replace('.mp3', '')
+        AudioPlayer.src = NewMusicRoot() + InternalMusic[track_index].trackName
+        playing()
+    }else if(track_index < InternalMusic.length - 1 && is_random == true){
+        let randomIndex = Math.floor(Math.random() * InternalMusic.length);
+        track_index = randomIndex;
+        wizkid = document.querySelector('.wizkid')
+        mynameis = document.querySelector('.mynameis')
+        wizkid.innerHTML = track_index + 1 + '/';
+        mynameis.innerHTML = InternalMusic[track_index].trackName.toString().replace('.mp3', '')
+        AudioPlayer.src = NewMusicRoot() + InternalMusic[track_index].trackName
+        playing()
+    }else if(track_index >= InternalMusic.length - 1 && is_random == false){
+        track_index = 0;
+        wizkid = document.querySelector('.wizkid')
+        mynameis = document.querySelector('.mynameis')
+        wizkid.innerHTML = track_index + 1 + '/';
+        mynameis.innerHTML = InternalMusic[track_index].trackName.toString().replace('.mp3', '')
+        AudioPlayer.src = NewMusicRoot() + InternalMusic[track_index].trackName
+        playing()
+    }else if(track_index >= InternalMusic.length - 1 && is_random == true){
+        let randomIndex = Math.floor(Math.random() * InternalMusic.length);
+        track_index = randomIndex;
+        wizkid = document.querySelector('.wizkid')
+        mynameis = document.querySelector('.mynameis')
+        wizkid.innerHTML = track_index + 1 + '/';
+        mynameis.innerHTML = InternalMusic[track_index].trackName.toString().replace('.mp3', '')
+        AudioPlayer.src = NewMusicRoot() + InternalMusic[track_index].trackName
+        playing()
+    }else{
+        track_index = 0;
+    }
+    currPlay(track_index);
 }
 
-if(track_index < music_list.length - 1 && is_random == false){
-    track_index += 1;
-    wizkid = document.querySelector('.wizkid')
-    mynameis = document.querySelector('.mynameis')
-    wizkid.innerHTML = track_index + 1 + '/';
-    mynameis.innerHTML = music_list[track_index].trackName.toString().replace('.mp3', '')
-    AudioPlayer.src = NewMusicRoot() + music_list[track_index].trackName
-}else if(track_index < music_list.length - 1 && is_random == true){
-    let randomIndex = music_list[Math.floor(Math.random() * music_list.length)];
-    track_index = randomIndex;
-    wizkid = document.querySelector('.wizkid')
-    mynameis = document.querySelector('.mynameis')
-    wizkid.innerHTML = track_index + 1 + '/';
-    mynameis.innerHTML = music_list[track_index].trackName.toString().replace('.mp3', '')
-    AudioPlayer.src = NewMusicRoot() + music_list[track_index].trackName
-}else if(track_index >= music_list.length - 1 && is_random == false){
-    track_index = 0;
-    wizkid = document.querySelector('.wizkid')
-    mynameis = document.querySelector('.mynameis')
-    wizkid.innerHTML = track_index + 1 + '/';
-    mynameis.innerHTML = music_list[track_index].trackName.toString().replace('.mp3', '')
-    AudioPlayer.src = NewMusicRoot() + music_list[track_index].trackName
-}else if(track_index >= music_list.length - 1 && is_random == true){
-    let randomIndex = music_list[Math.floor(Math.random() * music_list.length)];
-    track_index = randomIndex;
-    wizkid = document.querySelector('.wizkid')
-    mynameis = document.querySelector('.mynameis')
-    wizkid.innerHTML = track_index + 1 + '/';
-    mynameis.innerHTML = music_list[track_index].trackName.toString().replace('.mp3', '')
-    AudioPlayer.src = NewMusicRoot() + music_list[track_index].trackName
-}else{
-    track_index = 0;
-}
-currPlay(track_index);
-}
 function PreviousTrackForAll(){
-    if(LoadFromStorage != 0){
+    if(LoadFromStorage() != 0){
         if (track_index > 0) {
             track_index -= 1;
+            wizkid = document.querySelector('.wizkid')
+            mynameis = document.querySelector('.mynameis')
             wizkid.innerHTML = track_index + 1 + '/';
             mynameis.innerHTML = MusicRoot(track_index).toString().replace('.mp3', '')
             AudioPlayer.src = MusicLocation() + MusicRoot(track_index)
@@ -590,9 +601,11 @@ function PreviousTrackForAll(){
     }
     if (track_index > 0) {
         track_index -= 1;
+        wizkid = document.querySelector('.wizkid')
+        mynameis = document.querySelector('.mynameis')
         wizkid.innerHTML = track_index + 1 + '/';
-        mynameis.innerHTML = music_list[track_index].trackName.toString().replace('.mp3', '')
-        AudioPlayer.src = NewMusicRoot() + music_list[track_index].trackName
+        mynameis.innerHTML = InternalMusic[track_index].trackName.toString().replace('.mp3', '')
+        AudioPlayer.src = NewMusicRoot() + InternalMusic[track_index].trackName
         playing()
     }
     currPlay(track_index);

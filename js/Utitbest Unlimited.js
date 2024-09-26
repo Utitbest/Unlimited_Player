@@ -67,7 +67,7 @@ let InternalMusic = [
     {trackName:'The Real Prechly x Shallipopi - A Collision Of Two Worlds 2.0 [Ft. Dj Lux and Dj Guti BPM] Official.mp3'},
     {trackName:'Twista-Ft-Jeremih-Next-To-You-1.mp3'},
     {trackName:'Tyla_-_Water.mp3'},
-    {trackName:'Wizkid_ft_Burna_Boy_-_Ginger.mp3'},
+    {trackName:'Wizkid_ft_Burna_Boy_-_Ginger.mp3'}
 ]
 
 runner.forEach((tools, index) => {
@@ -222,26 +222,47 @@ function MusicMaster(tap) {
     }
 }
 function ego() {
-    let realm;
-    realm = __get_fromStorage__('ReturnAudio');
-    inchains.querySelector('.inchains')
-    for (let B = 0; B < realm.length; B++) {
-
-        let forMusic = createEle('div');
-        forMusic.className = 'breakingheart';
-        forMusic.innerHTML = `
-                    <div class="welcomenmen">
-                        <img class="fa fa-play" alt="">
-                        <p class="musicName">${realm[B].toString().replace('.mp3', '')}</p>
-                        <p class="fileSize"></p>
-                        <p class="Duration"></p>
-                    </div>
-            `;
-        inchains.append(forMusic);
-        wizkid2 = document.querySelector('.wizkid2');
-        wizkid2.innerHTML = realm.length;
+    if(LoadFromStorage() != 0){
+        let realm;
+        realm = __get_fromStorage__('ReturnAudio');
+        inchains.querySelector('.inchains')
+        for (let B = 0; B < realm.length; B++) {
+    
+            let forMusic = createEle('div');
+            forMusic.className = 'breakingheart';
+            forMusic.innerHTML = `
+                        <div class="welcomenmen">
+                            <img class="fa fa-play" alt="">
+                            <p class="musicName">${realm[B].toString().replace('.mp3', '')}</p>
+                            <p class="fileSize"></p>
+                            <p class="Duration"></p>
+                        </div>
+                `;
+            inchains.append(forMusic);
+            wizkid2 = document.querySelector('.wizkid2');
+            wizkid2.innerHTML = realm.length;
+        }
+        clickToPlayFromLIst()
+        return
     }
-    clickToPlayFromLIst()
+        for (let B = 0; B < InternalMusic.length; B++) {
+            let forMusic = createEle('div');
+            forMusic.className = 'breakingheart';
+            forMusic.innerHTML = `
+                        <div class="welcomenmen">
+                            <img class="fa fa-play" alt="">
+                            <p class="musicName">${InternalMusic[B].trackName.toString().replace('.mp3', '')}</p>
+                            <p class="fileSize"></p>
+                            <p class="Duration"></p>
+                        </div>
+                `;
+            inchains.append(forMusic);
+            wizkid2 = document.querySelector('.wizkid2');
+            wizkid2.innerHTML = InternalMusic.length;
+        
+            clickToPlayFromLIst()
+        }
+  
 }
 function VideoSink(tap) {
     if (tap.toLowerCase() == 'video') {
@@ -326,8 +347,9 @@ function ToreturnVideostoPlaylist() {
 
 //  next biggest fear is clicktoplayfromlist, i have to face my fear to excel
 
-function clickToPlayFromLIst() {
-    let breakingheart = document.querySelectorAll('.breakingheart');
+function clickToPlayFromLIst(){
+    if(LoadFromStorage() != 0){
+        let breakingheart = document.querySelectorAll('.breakingheart');
     breakingheart.forEach((pre, twopack) => {
         pre.addEventListener('click', function () {
             track_index = twopack;
@@ -345,8 +367,27 @@ function clickToPlayFromLIst() {
             wizkid = document.querySelector('.wizkid');
             wizkid.innerHTML = track_index + 1 + '/';
         })
-
     })
+    }else{
+        breakingheart.forEach((pre, twopack) => {
+            pre.addEventListener('click', function () {
+                track_index = twopack;
+                let dovesst = document.querySelector('.dovesst');
+                let mynameis = document.querySelector('.mynameis')
+                setInterval(setUpdate, 1000)
+                AudioPlayer.src = NewMusicRoot() + music_list[track_index].trackName;
+                mynameis.innerHTML = music_list[track_index].trackName.toString().replace('.mp3', '')
+                AudioPlayer.play()
+                teknoq2.src = './icons/pause.png';
+                if (dovesst !== null) {
+                    dovesst.classList.remove('dovesst')
+                }
+                pre.classList.add('dovesst');
+                wizkid = document.querySelector('.wizkid');
+                wizkid.innerHTML = track_index + 1 + '/';
+            })
+        })
+    }
 }
 
 // this function makes the music play after finishing but update is coming for it

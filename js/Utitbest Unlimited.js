@@ -30,16 +30,17 @@ let appolo = document.querySelector('.appolo')
 let formation = document.querySelectorAll('.formation');
 let slapPolice = document.querySelector('.slapPolice')
 let forRandomNaN = document.querySelector('.forRandomNaN')
-
+let forRepeating = document.querySelector('.forRepeating')
 
 let transquilty = createEle('span')
 transquilty.className = 'vibess';
 
 let music_list;
 let AudioPlayer = createEle('audio')
-is_random = false;
+    is_random = false;
 let is_playing = false;
 let track_index = 0;
+let Is_repeat = false;
 
 let InternalMusic = [
     {trackName:'ABBA-I-Have-A-Dream.mp3'},
@@ -150,10 +151,8 @@ function getTap() {
         currentTap.innerHTML = Tap;
         VideoSink(Tap)
     } else if (Tap == 'Music') {
-    // let sp = document.querySelector('#slapPolice');
         currentTap.innerHTML = Tap;
         MusicMaster(Tap);
-   
     } else if (Tap === 'Queue') {
         currentTap.innerHTML = Tap;
     } else if (Tap === 'Playlist') {
@@ -358,6 +357,7 @@ function clickToPlayFromLIst(){
             AudioPlayer.src = MusicLocation() + MusicRoot([track_index]);
             mynameis.innerHTML = MusicRoot([track_index]).toString().replace('.mp3', '')
             AudioPlayer.play()
+            AudioPlayer.volume = getvolume();
             teknoq2.src = './icons/pause.png';
             if (dovesst !== null) {
                 dovesst.classList.remove('dovesst')
@@ -379,6 +379,7 @@ function clickToPlayFromLIst(){
                 AudioPlayer.src = NewMusicRoot() + InternalMusic[track_index].trackName;
                 mynameis.innerHTML = InternalMusic[track_index].trackName.toString().replace('.mp3', '')
                 AudioPlayer.play()
+                AudioPlayer.volume = getvolume();
                 teknoq2.src = './icons/pause.png';
                 if (dovesst !== null) {
                     dovesst.classList.remove('dovesst')
@@ -392,6 +393,7 @@ function clickToPlayFromLIst(){
 
 // this function makes the music play after finishing but update is coming for it
 AudioPlayer.addEventListener('ended', function () {
+    AudioPlayer.volume = getvolume();
     NextTrack()
     playing()
 })
@@ -401,10 +403,19 @@ function controlspeeding(){
 }
 
 function NextTrack() {
-    if(localStorage.getItem('randomise') !== null && JSON.parse(localStorage.getItem('randomise')) == true){
-        is_random = true;
-    }
-    if(LoadFromStorage() != 0){           
+    if(LoadFromStorage() != 0){      
+        if(localStorage.getItem('repeatingTrack') !== null && JSON.parse(localStorage.getItem('repeatingTrack')) == true){
+            let retr = track_index;
+            track_index = retr;
+            wizkid.innerHTML = track_index + 1 + '/';
+            mynameis.innerHTML = MusicRoot(track_index).toString().replace('.mp3', '')
+            AudioPlayer.src = MusicLocation() + MusicRoot(track_index)
+            playing()
+            return;
+        }
+        if(localStorage.getItem('randomise') !== null && JSON.parse(localStorage.getItem('randomise')) == true){
+            is_random = true;
+        }     
         if (track_index < __get_fromStorage__('ReturnAudio').length - 1 && is_random == false){
             track_index += 1;
             wizkid = document.querySelector('.wizkid')
@@ -439,6 +450,18 @@ function NextTrack() {
            track_index = 0;
         }
         currPlay(track_index);
+        return;
+    }
+
+    if(localStorage.getItem('repeatingTrack') !== null && JSON.parse(localStorage.getItem('repeatingTrack')) == true){
+        let touch = track_index;
+        track_index = touch;
+        wizkid = document.querySelector('.wizkid')
+        mynameis = document.querySelector('.mynameis')
+        wizkid.innerHTML = track_index + 1 + '/';
+        mynameis.innerHTML = InternalMusic[track_index].trackName.toString().replace('.mp3', '')
+        AudioPlayer.src = NewMusicRoot() + InternalMusic[track_index].trackName
+        playing()
         return;
     }
     if(localStorage.getItem('randomise') !== null && JSON.parse(localStorage.getItem('randomise')) == true){
@@ -489,24 +512,46 @@ function currPlay(d) {
     });
 }
 function PlayAllfunction(){
-    paradisees1 = document.querySelector('.paradisees1')
-    paradisees1.addEventListener('click', function(){
+    if(LoadFromStorage() != 0){
+        paradisees1 = document.querySelector('.paradisees1')
+        paradisees1.addEventListener('click', function(){
         mynameis = document.querySelector('.mynameis')
         wizkid = document.querySelector('.wizkid')
         if (track_index < __get_fromStorage__('ReturnAudio').length){
             track_index = 0;
             AudioPlayer.src = MusicLocation() + MusicRoot(track_index)
-            AudioPlayer.play()  
+            AudioPlayer.play() 
+            AudioPlayer.volume = getvolume() 
             setInterval(setUpdate, 1000)
             teknoq2.src = './icons/pause.png';
             wizkid.innerHTML = track_index +1 + '/';
             mynameis.innerHTML = MusicRoot(track_index).toString().replace('.mp3', '')
+        }
+            currPlay(track_index)
+        })
+        return;
+    }
+
+    paradisees1 = document.querySelector('.paradisees1')
+    paradisees1.addEventListener('click', function(){
+        mynameis = document.querySelector('.mynameis')
+        wizkid = document.querySelector('.wizkid')
+        if (track_index < InternalMusic.length){
+            track_index = 0;
+            AudioPlayer.src = NewMusicRoot() + InternalMusic[track_index].trackName
+            AudioPlayer.play()
+            AudioPlayer.volume = getvolume()   
+            setInterval(setUpdate, 1000)
+            teknoq2.src = './icons/pause.png';
+            wizkid.innerHTML = track_index +1 + '/';
+            mynameis.innerHTML = InternalMusic[track_index].trackName.toString().replace('.mp3', '')
         }
         currPlay(track_index)
     })
 }
 function NextTrackForAll() {
 if(LoadFromStorage() != 0){
+    
     if(localStorage.getItem('randomise') !== null && JSON.parse(localStorage.getItem('randomise')) == true){
         is_random = true;
     }
@@ -610,7 +655,27 @@ function PreviousTrackForAll(){
     }
     currPlay(track_index);
 }
-
+function RepeatTracks(){
+    Is_repeat ? NoRepeat() : RepeatCurrentTrack();
+}
+function RepeatCurrentTrack(){
+    Is_repeat = true;
+    forRepeating.src = './icons/no_repeat.png';
+    localStorage.setItem('repeatingTrack', JSON.stringify(true))
+}
+function NoRepeat(){
+    Is_repeat = false;
+    forRepeating.src = './icons/repeat.png';
+    localStorage.setItem('repeatingTrack', JSON.stringify(false))
+}
+function toUpdateRepeating(){
+    Is_repeat = JSON.parse(localStorage.getItem('repeatingTrack'))
+    if(Is_repeat == true){
+        forRepeating.src = './icons/no_repeat.png';
+    }else{
+        forRepeating.src = './icons/repeat.png';
+    }
+}
 function PlayingRandomMode(){
     is_random = true;
     forRandomNaN.src = './icons/shuffle.png';
@@ -676,6 +741,7 @@ function WowAmplaying() {
 }
 function playing() {
     AudioPlayer.play()
+    AudioPlayer.volume = getvolume();
     is_playing = true;
     teknoq2.src = './icons/pause.png';
 }
@@ -824,10 +890,14 @@ updateVolumeSlider()
 if(localStorage.getItem('randomise') == null){
     localStorage.setItem('randomise', JSON.stringify(is_random))
 }
+if(localStorage.getItem('repeatingTrack') == null){
+    localStorage.setItem('repeatingTrack', JSON.stringify(Is_repeat))
+}
 window.onload = function () {
     getTap();
     controlspeeding()
     ToupdateRandom_Logo()
+    toUpdateRepeating()
 }
 window.addEventListener('keydown', function(event){
     if(event.keyCode == 39){
@@ -842,8 +912,6 @@ window.addEventListener('keydown', function(event){
 })
 
 
-// AudioPlayer.src = './Ulimited_Musics/' + Object.values(InternalMusic[8]);
-    // AudioPlayer.play()
 
 
 

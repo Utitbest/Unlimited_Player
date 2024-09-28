@@ -634,6 +634,7 @@
     display: flex;
     justify-content: space-evenly;
     align-items: center;
+    overflow: hidden;
     font-size: 16px;
     font-weight: 600;
 }
@@ -681,12 +682,13 @@
     border: solid 1px #3b3939;
     overflow-x: hidden;
     z-index: 2;
+    cursor: pointer;
 }
 .breakingheartvideo:hover{
     background: rgb(54, 54, 55);
 }
 .aunty{
-    height: 100%;
+    height: auto;
     width: 100%;
     display: flex;
 }
@@ -830,4 +832,35 @@
 }
 .smmae{
     position: relative;
+}
+@media only screen and (max-width:836px) {
+    .airport p{
+        display: none;
+    }
+    .alright{
+        font-size: 13px;
+    }
+    .paradisees{
+        font-size: 13px;
+        padding: 5px;
+    }
+    .welcomenmen{
+        font-size: 14px;
+    }
+    .andee{
+        justify-content: flex-end;
+    }
+    .stock{
+        justify-content: flex-start !important;
+        gap: 20px;
+    }
+}
+@media only screen and (max-width:750px){
+    .teknoq2{
+        width: 60px;
+        height: 60px;
+    }
+}
+.complain{
+    background:rgb(33, 51, 60) !important;
 }

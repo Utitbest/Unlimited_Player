@@ -31,15 +31,19 @@ let formation = document.querySelectorAll('.formation');
 let slapPolice = document.querySelector('.slapPolice')
 let forRandomNaN = document.querySelector('.forRandomNaN')
 let forRepeating = document.querySelector('.forRepeating')
+let breakingheartvideo = document.querySelectorAll('.breakingheartvideo')
 
 let transquilty = createEle('span')
 transquilty.className = 'vibess';
 
 let music_list;
+let video_list;
 let AudioPlayer = createEle('audio')
+let VideoPlayer = createEle('video')
     is_random = false;
 let is_playing = false;
 let track_index = 0;
+let video_index = 0;
 let Is_repeat = false;
 
 let InternalMusic = [
@@ -69,7 +73,16 @@ let InternalMusic = [
     {trackName:'Twista-Ft-Jeremih-Next-To-You-1.mp3'},
     {trackName:'Tyla_-_Water.mp3'},
     {trackName:'Wizkid_ft_Burna_Boy_-_Ginger.mp3'}
-]
+];
+let InternalVideo = [
+    {video:'6af645857b17fb84df698069e044b143.mp4'},
+    {video:'6c687216dd72f17a279a81c12e86fee1.mp4'},
+    {video:'6ec060513c4973d91ad912f49ba6a454.mp4'},
+    {video:'0918a3a778f0b8ff9b8077603f4242ac.mp4'},
+    {video:'6552010293403cee761d2c4dbd42ffb5.mp4'},
+    {video:'d661b2e994e3dea4ed882360e97adb9b.mp4'},
+    {video:'fd184d602ca147eab39d1df4ffd25e59.mp4'}
+];
 
 runner.forEach((tools, index) => {
     tools.addEventListener('click', function () {
@@ -123,7 +136,6 @@ function Menu() {
     on()
 }
 Menu()
-
 function New_menu_Book() {
     uranuim = document.querySelector('.uranuim')
     pullup.addEventListener('click', function () {
@@ -136,12 +148,10 @@ function New_menu_Book() {
         }
     })
 }
-
 function __get_fromStorage__(type) {
     let data = localStorage.getItem(type);
     return data ? JSON.parse(data) : [];
 }
-
 function getTap() {
     let Tap = location.hash.replace('#', '');
     if (Tap === 'Home') {
@@ -161,8 +171,6 @@ function getTap() {
         currentTap.innerHTML = Tap;
     }
 }
-
-
 function HomeMaster(tap) {
     if (tap.toLowerCase() == 'home') {
         samething.innerHTML = 'Recent Media';
@@ -295,7 +303,6 @@ function VideoSink(tap) {
         videoThat()
     }
 }
-
 function AudioReciever() {
     thewane = document.querySelector('.EYECLASS');
     thewane.addEventListener('change', function () {
@@ -307,7 +314,6 @@ function AudioReciever() {
         localStorage.setItem('ReturnAudio', JSON.stringify(akara))
     });
 }
-
 function videoThat() {
     videocloset = document.querySelector('.videocloset')
     videocloset.addEventListener('change', function () {
@@ -320,37 +326,74 @@ function videoThat() {
 
     });
 }
-
 function ToreturnVideostoPlaylist() {
-    let fridays
-    fridays = __get_fromStorage__('returnvideos');
+    if(VideoFromStorage() != 0){
+        let fridays;
+        fridays = __get_fromStorage__('returnvideos');
+        inchains.querySelector('.inchains');
+        transquilty.querySelector('.vibess')
+        for (let B = 0; B < fridays.length; B++) {
+            let forMusic = createEle('span');
+            forMusic.className = 'breakingheartvideo';
+            forMusic.innerHTML = `
+                    <span class="welcomenmen1">
+                        <video class="aunty" src="${VideoLocation() + fridays[B]}"></video>
+                    </span>
+                     <h4 class="heartattack">${fridays[B]}</h4>
+                `;
+            transquilty.append(forMusic);
+            inchains.append(transquilty)
+        }
+            pine1 = document.querySelector('.pine1')
+            pine1.innerHTML = fridays.length;
+            clickToPlayVideo()
+            return;
+    }
+
     inchains.querySelector('.inchains');
     transquilty.querySelector('.vibess')
-    for (let B = 0; B < fridays.length; B++) {
+    for (let B = 0; B < InternalVideo.length; B++) {
         let forMusic = createEle('span');
         forMusic.className = 'breakingheartvideo';
         forMusic.innerHTML = `
                     <span class="welcomenmen1">
-                        <img class="aunty" src="./10\ Ways\ Creative\ People\ Constantly\ Stay\ Inspired.jpeg" alt="">
+                        <video class="aunty" src="${NewVideoRoot() + Object.values(InternalVideo[B])}"></video>
                     </span>
-                     <h4 class="heartattack">${fridays[B]}</h4>
+                     <h4 class="heartattack">${InternalVideo[B].video}</h4>
             `;
         transquilty.append(forMusic);
         inchains.append(transquilty)
     }
-    wizkid = document.querySelector('.pine1')
-    wizkid.innerHTML = fridays.length + '/' + fridays.length;
+    pine1 = document.querySelector('.pine1')
+    pine1.innerHTML = InternalVideo.length;
+    clickToPlayVideo()
 }
-
-
-//  next biggest fear is clicktoplayfromlist, i have to face my fear to excel
-
+function clickToPlayVideo(){
+    if(VideoFromStorage() != 0){
+        let breakingheartvideo = document.querySelectorAll('.breakingheartvideo');
+            breakingheartvideo.forEach((watkin, drinkup) =>{
+                watkin.addEventListener('click', function(){
+                    video_index = drinkup;
+                    let complain = document.querySelector('.complain')
+                    let mynameis = document.querySelector('.mynameis')
+                    VideoPlayer.src = VideoLocation() + VideoRoot(video_index);
+                    VideoPlayer.play()
+                    mynameis.innerHTML = VideoRoot(video_index).toString().replace('.mp4', '');
+                    if(complain !== null){
+                        complain.classList.remove('complain')
+                    }
+                    watkin.classList.add('complain')
+                })
+            });
+            // return
+    }
+}
 function clickToPlayFromLIst(){
     if(LoadFromStorage() != 0){
         let breakingheart = document.querySelectorAll('.breakingheart');
         breakingheart.forEach((pre, twopack) => {
         pre.addEventListener('click', function () {
-            track_index = twopack;
+            track_index = twopack
             let dovesst = document.querySelector('.dovesst');
             let mynameis = document.querySelector('.mynameis')
             setInterval(setUpdate, 1000)
@@ -390,7 +433,6 @@ function clickToPlayFromLIst(){
             })
         })
 }
-
 // this function makes the music play after finishing but update is coming for it
 AudioPlayer.addEventListener('ended', function () {
     AudioPlayer.volume = getvolume();
@@ -629,7 +671,6 @@ if(LoadFromStorage() != 0){
     }
     currPlay(track_index);
 }
-
 function PreviousTrackForAll(){
     if(LoadFromStorage() != 0){
         if (track_index > 0) {
@@ -723,15 +764,32 @@ function MusicRoot(d){
     music_list = LoadFromStorage();
     return music_list[d]
 }
+function VideoRoot(t){
+    video_list = VideoFromStorage()
+    return video_list[t]
+}
 function MusicLocation() {
     return 'C:/Users/UTITOFON PC/Music/'
+}
+function VideoLocation() {
+    return 'C:/Users/UTITOFON PC/Videos/'
 }
 function NewMusicRoot(){
     return './Ulimited_Musics/'
 }
+function NewVideoRoot(){
+    return './Ulimited_Videos/'
+}
 function LoadFromStorage() {
     if (localStorage.getItem('ReturnAudio') !== null) {
         return JSON.parse(localStorage.getItem('ReturnAudio'));
+    } else {
+        return 0;
+    }
+}
+function VideoFromStorage() {
+    if (localStorage.getItem('returnvideos') !== null) {
+        return JSON.parse(localStorage.getItem('returnvideos'));
     } else {
         return 0;
     }

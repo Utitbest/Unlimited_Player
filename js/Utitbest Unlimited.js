@@ -40,6 +40,8 @@ let music_list;
 let video_list;
 let AudioPlayer = createEle('audio')
 let VideoPlayer = createEle('video')
+let videoScreen = createEle('video')
+    videoScreen.className = 'eminem';
     is_random = false;
 let is_playing = false;
 let track_index = 0;
@@ -374,19 +376,30 @@ function clickToPlayVideo(){
             breakingheartvideo.forEach((watkin, drinkup) =>{
                 watkin.addEventListener('click', function(){
                     video_index = drinkup;
+                    feel = document.querySelector('.feel2')
+
                     let complain = document.querySelector('.complain')
-                    let mynameis = document.querySelector('.mynameis')
-                    VideoPlayer.src = VideoLocation() + VideoRoot(video_index);
-                    VideoPlayer.play()
+                    let mynameis = document.querySelector('.mynameis');
+                    let bcse = createEle('div');
+                        bcse.className = 'rappers';
+                    videoScreen.src = VideoLocation() + VideoRoot(video_index);
+                    videoScreen.volume = getvolume()
+                    videoScreen.play()
                     mynameis.innerHTML = VideoRoot(video_index).toString().replace('.mp4', '');
                     if(complain !== null){
                         complain.classList.remove('complain')
                     }
-                    watkin.classList.add('complain')
+                    watkin.classList.add('complain');
+                    bcse.append(videoScreen)
+                    feel.append(bcse)
                 })
             });
-            // return
+            return
     }
+    
+}
+function videoView(){
+            
 }
 function clickToPlayFromLIst(){
     if(LoadFromStorage() != 0){

@@ -32,18 +32,23 @@ let slapPolice = document.querySelector('.slapPolice')
 let forRandomNaN = document.querySelector('.forRandomNaN')
 let forRepeating = document.querySelector('.forRepeating')
 let breakingheartvideo = document.querySelectorAll('.breakingheartvideo')
+let Sean2 = document.querySelector('.Sean2')
+let drinkmens = document.querySelector('.drinkmens')
 
 let transquilty = createEle('span')
 transquilty.className = 'vibess';
 
 let music_list;
 let video_list;
+let UpdatevideoProgress;
+let UpDateProgress;
 let AudioPlayer = createEle('audio')
 let VideoPlayer = createEle('video')
 let videoScreen = createEle('video')
     videoScreen.className = 'eminem';
     is_random = false;
 let is_playing = false;
+let videoFTaudio = false;
 let track_index = 0;
 let video_index = 0;
 let Is_repeat = false;
@@ -376,13 +381,22 @@ function clickToPlayVideo(){
             breakingheartvideo.forEach((watkin, drinkup) =>{
                 watkin.addEventListener('click', function(){
                     video_index = drinkup;
-                    feel = document.querySelector('.feel2')
-
+                    clearInterval(UpDateProgress)
+                    progress_it_self.value = 0;
+                    AudioPlayer.pause();
+                    Sean2 = document.querySelector('.Sean2')
                     let complain = document.querySelector('.complain')
                     let mynameis = document.querySelector('.mynameis');
                     let bcse = createEle('div');
-                        bcse.className = 'rappers';
-                    videoScreen.src = VideoLocation() + VideoRoot(video_index);
+                        bcse.className = 'rappers stopdripplin';
+                    let x = createEle('div');
+                        x.className = 'guava'
+                        x.innerHTML = `
+                            <img class="gunshott" src="./icons/icons8-back-48 (4).png" alt="">
+                            <img class="gunshott drinkmens" src="./icons/icons8-close-188.png" alt="">
+                        `;  
+                    UpdatevideoProgress = setInterval(setUpdate1, 1000)
+                    videoScreen.src = VideoLocation() + VideoRoot(video_index)
                     videoScreen.volume = getvolume()
                     videoScreen.play()
                     mynameis.innerHTML = VideoRoot(video_index).toString().replace('.mp4', '');
@@ -390,26 +404,52 @@ function clickToPlayVideo(){
                         complain.classList.remove('complain')
                     }
                     watkin.classList.add('complain');
+                    bcse.append(x)
                     bcse.append(videoScreen)
-                    feel.append(bcse)
+                    Sean2.append(bcse)
+                    XMarktoremve()
                 })
             });
             return
     }
-    
 }
-function videoView(){
-            
+function resetcount(){
+    musictime1.innerHTML = '00:00:00'
+    musictime2.innerHTML = '00:00:00'
 }
+function XMarktoremve(){
+    drinkmens = document.querySelector('.drinkmens')
+    drinkmens.addEventListener('click', function(){
+        let candee = document.querySelector('.rappers')
+        let dd = document.querySelector('.guava')
+        clearInterval(UpdatevideoProgress)
+        progress_it_self.value = 0;
+        resetcount()
+        candee.remove()
+        dd.remove()
+    })
+}
+videoScreen.addEventListener('ended', function(){
+    let candee = document.querySelector('.rappers')
+        let dd = document.querySelector('.guava')
+        clearInterval(UpdatevideoProgress)
+        progress_it_self.value = 0;
+        resetcount()
+        candee.remove()
+        dd.remove()
+})
 function clickToPlayFromLIst(){
     if(LoadFromStorage() != 0){
         let breakingheart = document.querySelectorAll('.breakingheart');
         breakingheart.forEach((pre, twopack) => {
         pre.addEventListener('click', function () {
             track_index = twopack
+            clearInterval(UpdatevideoProgress)
+            progress_it_self.value = 0;
+            videoScreen.pause()
             let dovesst = document.querySelector('.dovesst');
             let mynameis = document.querySelector('.mynameis')
-            setInterval(setUpdate, 1000)
+            UpDateProgress = setInterval(setUpdate, 1000)
             AudioPlayer.src = MusicLocation() + MusicRoot([track_index]);
             mynameis.innerHTML = MusicRoot([track_index]).toString().replace('.mp3', '')
             AudioPlayer.play()
@@ -429,9 +469,10 @@ function clickToPlayFromLIst(){
         breakingheart.forEach((pre, twopack) => {
             pre.addEventListener('click', function () {
                 track_index = twopack;
+                clearInterval(UpdatevideoProgress)
                 let dovesst = document.querySelector('.dovesst');
                 let mynameis = document.querySelector('.mynameis')
-                setInterval(setUpdate, 1000)
+                UpDateProgress = setInterval(setUpdate, 1000)
                 AudioPlayer.src = NewMusicRoot() + InternalMusic[track_index].trackName;
                 mynameis.innerHTML = InternalMusic[track_index].trackName.toString().replace('.mp3', '')
                 AudioPlayer.play()
@@ -577,7 +618,7 @@ function PlayAllfunction(){
             AudioPlayer.src = MusicLocation() + MusicRoot(track_index)
             AudioPlayer.play() 
             AudioPlayer.volume = getvolume() 
-            setInterval(setUpdate, 1000)
+            UpDateProgress = setInterval(setUpdate, 1000)
             teknoq2.src = './icons/pause.png';
             wizkid.innerHTML = track_index +1 + '/';
             mynameis.innerHTML = MusicRoot(track_index).toString().replace('.mp3', '')
@@ -596,7 +637,7 @@ function PlayAllfunction(){
             AudioPlayer.src = NewMusicRoot() + InternalMusic[track_index].trackName
             AudioPlayer.play()
             AudioPlayer.volume = getvolume()   
-            setInterval(setUpdate, 1000)
+            UpDateProgress = setInterval(setUpdate, 1000)
             teknoq2.src = './icons/pause.png';
             wizkid.innerHTML = track_index +1 + '/';
             mynameis.innerHTML = InternalMusic[track_index].trackName.toString().replace('.mp3', '')
@@ -751,6 +792,29 @@ function ToupdateRandom_Logo(){
         forRandomNaN.src = './icons/exchnage.png';
     }
 }
+function setUpdate1() {
+        let seekpositionee = 0;
+        if (!isNaN(videoScreen.duration)) {
+            seekpositionee = videoScreen.currentTime * (100 / videoScreen.duration)
+            progress_it_self.value = seekpositionee;
+    
+            let currentMin = Math.floor(videoScreen.currentTime / 60);
+            let currentSec = Math.floor(videoScreen.currentTime - currentMin * 60);
+    
+            let durationMin = Math.floor(videoScreen.duration / 60);
+            let durationSec = Math.floor(videoScreen.duration - durationMin * 60);
+    
+            if (currentMin < 10) { currentMin = '0' + currentMin }
+            if (currentSec < 10) { currentSec = '0' + currentSec }
+    
+            if (durationMin < 10) { durationMin = '0' + durationMin }
+            if (durationSec < 10) { durationSec = '0' + durationSec }
+    
+            musictime1.innerHTML = currentMin + ':' + currentSec;
+            musictime2.innerHTML = durationMin + ':' + durationSec;
+        }
+}
+
 function setUpdate() {
     let seekpositionee = 0;
     if (!isNaN(AudioPlayer.duration)) {
@@ -822,8 +886,15 @@ function pausing() {
     teknoq2.src = './icons/icons8-video-94.png';
 }
 function ForwardBackward() {
-    let seek = AudioPlayer.duration * (progress_it_self.value / 100);
-    AudioPlayer.currentTime = seek;
+    let Tap = location.hash
+    if(Tap === '#Music'){
+        let seek = AudioPlayer.duration * (progress_it_self.value / 100);
+        AudioPlayer.currentTime = seek;
+    }else if(Tap === '#Video'){
+        let seek = videoScreen.duration * (progress_it_self.value / 100);
+        videoScreen.currentTime = seek;
+    }
+    
 }
 function volumePanel() {
     let akd = document.querySelector('.akd')

@@ -45,8 +45,8 @@ let UpDateProgress;
 let AudioPlayer = createEle('audio')
 let VideoPlayer = createEle('video')
 let videoScreen = createEle('video')
-    videoScreen.className = 'eminem';
-    is_random = false;
+videoScreen.className = 'eminem';
+is_random = false;
 let is_playing = false;
 let videoFTaudio = false;
 let track_index = 0;
@@ -54,41 +54,41 @@ let video_index = 0;
 let Is_repeat = false;
 
 let InternalMusic = [
-    {trackName:'ABBA-I-Have-A-Dream.mp3'},
-    {trackName:'AKA-Ft-Nasty-C-Lemons-Lemonade-(TrendyBeatz.com).mp3'},
-    {trackName:'Alan_Walker_-_Sing_Me_To_Sleep.mp3'},
-    {trackName:'Alan_Walker_-_Time.mp3'},
-    {trackName:'Alan_Walker_Ft_Isak_-_Sorry.mp3'},
-    {trackName:'ArrDee_-_Come_Go.mp3'},
-    {trackName:'ArrDee_-_Flowers_Say_My_Name__Connectloaded.com.mp3'},
-    {trackName:'Ayra_Starr_-_Commas.mp3'},
-    {trackName:'Busta_Rhymes_ft_Mariah_Carey_-_I_Know_What_You_Want.mp3'},
-    {trackName:'Davido_-_Feel.mp3'},
-    {trackName:'Diddy_Dirty_Money_ft_Skylar_Grey_-_Coming_Home_Kelgist.com.mp3'},
-    {trackName:'Eminem-Gnat.mp3'},
-    {trackName:'Heal The World.mp3'},
-    {trackName:'Ja Rule - Murder Reigns.mp3'},
-    {trackName:'Jonas-Brothers-Sucker-(CeeNaija.com).mp3'},
-    {trackName:'King_Promise_-_Terminator.mp3'},
-    {trackName:'Kizz_Daniel_-_Too_Busy_To_Be_Bae.mp3'},
-    {trackName:'Kizz-Daniel-Anchovy-(JustNaija.com).mp3'},
-    {trackName:'Lojay-LV-N-ATTN-Ft-Sarz-And-Wizkid-1(TrendyBeatz.com).mp3'},
-    {trackName:'Major-Lazer-Ft-Nasty-C-Ice-Prince-Patoranking-Jidenna-Particular-(TrendyBeatz.com).mp3'},
-    {trackName:'Olamide-At-Your-Service-[TrendyBeatz.com].mp3'},
-    {trackName:'Rema - Red Potion (Lyric Video).mp3'},
-    {trackName:'The Real Prechly x Shallipopi - A Collision Of Two Worlds 2.0 [Ft. Dj Lux and Dj Guti BPM] Official.mp3'},
-    {trackName:'Twista-Ft-Jeremih-Next-To-You-1.mp3'},
-    {trackName:'Tyla_-_Water.mp3'},
-    {trackName:'Wizkid_ft_Burna_Boy_-_Ginger.mp3'}
+    { trackName: 'ABBA-I-Have-A-Dream.mp3' },
+    { trackName: 'AKA-Ft-Nasty-C-Lemons-Lemonade-(TrendyBeatz.com).mp3' },
+    { trackName: 'Alan_Walker_-_Sing_Me_To_Sleep.mp3' },
+    { trackName: 'Alan_Walker_-_Time.mp3' },
+    { trackName: 'Alan_Walker_Ft_Isak_-_Sorry.mp3' },
+    { trackName: 'ArrDee_-_Come_Go.mp3' },
+    { trackName: 'ArrDee_-_Flowers_Say_My_Name__Connectloaded.com.mp3' },
+    { trackName: 'Ayra_Starr_-_Commas.mp3' },
+    { trackName: 'Busta_Rhymes_ft_Mariah_Carey_-_I_Know_What_You_Want.mp3' },
+    { trackName: 'Davido_-_Feel.mp3' },
+    { trackName: 'Diddy_Dirty_Money_ft_Skylar_Grey_-_Coming_Home_Kelgist.com.mp3' },
+    { trackName: 'Eminem-Gnat.mp3' },
+    { trackName: 'Heal The World.mp3' },
+    { trackName: 'Ja Rule - Murder Reigns.mp3' },
+    { trackName: 'Jonas-Brothers-Sucker-(CeeNaija.com).mp3' },
+    { trackName: 'King_Promise_-_Terminator.mp3' },
+    { trackName: 'Kizz_Daniel_-_Too_Busy_To_Be_Bae.mp3' },
+    { trackName: 'Kizz-Daniel-Anchovy-(JustNaija.com).mp3' },
+    { trackName: 'Lojay-LV-N-ATTN-Ft-Sarz-And-Wizkid-1(TrendyBeatz.com).mp3' },
+    { trackName: 'Major-Lazer-Ft-Nasty-C-Ice-Prince-Patoranking-Jidenna-Particular-(TrendyBeatz.com).mp3' },
+    { trackName: 'Olamide-At-Your-Service-[TrendyBeatz.com].mp3' },
+    { trackName: 'Rema - Red Potion (Lyric Video).mp3' },
+    { trackName: 'The Real Prechly x Shallipopi - A Collision Of Two Worlds 2.0 [Ft. Dj Lux and Dj Guti BPM] Official.mp3' },
+    { trackName: 'Twista-Ft-Jeremih-Next-To-You-1.mp3' },
+    { trackName: 'Tyla_-_Water.mp3' },
+    { trackName: 'Wizkid_ft_Burna_Boy_-_Ginger.mp3' }
 ];
 let InternalVideo = [
-    {video:'6af645857b17fb84df698069e044b143.mp4'},
-    {video:'6c687216dd72f17a279a81c12e86fee1.mp4'},
-    {video:'6ec060513c4973d91ad912f49ba6a454.mp4'},
-    {video:'0918a3a778f0b8ff9b8077603f4242ac.mp4'},
-    {video:'6552010293403cee761d2c4dbd42ffb5.mp4'},
-    {video:'d661b2e994e3dea4ed882360e97adb9b.mp4'},
-    {video:'fd184d602ca147eab39d1df4ffd25e59.mp4'}
+    { video: '6af645857b17fb84df698069e044b143.mp4' },
+    { video: '6c687216dd72f17a279a81c12e86fee1.mp4' },
+    { video: '6ec060513c4973d91ad912f49ba6a454.mp4' },
+    { video: '0918a3a778f0b8ff9b8077603f4242ac.mp4' },
+    { video: '6552010293403cee761d2c4dbd42ffb5.mp4' },
+    { video: 'd661b2e994e3dea4ed882360e97adb9b.mp4' },
+    { video: 'fd184d602ca147eab39d1df4ffd25e59.mp4' }
 ];
 
 runner.forEach((tools, index) => {
@@ -236,7 +236,7 @@ function MusicMaster(tap) {
     }
 }
 function ego() {
-    if(LoadFromStorage() != 0){
+    if (LoadFromStorage() != 0) {
         let realm;
         realm = __get_fromStorage__('ReturnAudio');
         inchains.querySelector('.inchains')
@@ -258,24 +258,24 @@ function ego() {
         clickToPlayFromLIst()
         return
     }
-        for (let B = 0; B < InternalMusic.length; B++) {
-            let forMusic = createEle('div');
-            forMusic.className = 'breakingheart';
-            forMusic.innerHTML = `
+    for (let B = 0; B < InternalMusic.length; B++) {
+        let forMusic = createEle('div');
+        forMusic.className = 'breakingheart';
+        forMusic.innerHTML = `
                         <div class="welcomenmen">
                             <img class="fa fa-play" alt="">
-                            <p class="musicName">${InternalMusic[B].trackName.toString().replace('.mp3', '')}</p>
+                            <p class="musicName">${toSting(InternalMusic[B].trackName.toString().replace('.mp3', ''))}</p>
                             <p class="fileSize"></p>
                             <p class="Duration"></p>
                         </div>
                 `;
-            inchains.append(forMusic);
-            wizkid2 = document.querySelector('.wizkid2');
-            wizkid2.innerHTML = InternalMusic.length;
-        
-        }
-        clickToPlayFromLIst()
-    
+        inchains.append(forMusic);
+        wizkid2 = document.querySelector('.wizkid2');
+        wizkid2.innerHTML = InternalMusic.length;
+
+    }
+    clickToPlayFromLIst()
+
 }
 function VideoSink(tap) {
     if (tap.toLowerCase() == 'video') {
@@ -334,7 +334,7 @@ function videoThat() {
     });
 }
 function ToreturnVideostoPlaylist() {
-    if(VideoFromStorage() != 0){
+    if (VideoFromStorage() != 0) {
         let fridays;
         fridays = __get_fromStorage__('returnvideos');
         inchains.querySelector('.inchains');
@@ -351,10 +351,10 @@ function ToreturnVideostoPlaylist() {
             transquilty.append(forMusic);
             inchains.append(transquilty)
         }
-            pine1 = document.querySelector('.pine1')
-            pine1.innerHTML = fridays.length;
-            clickToPlayVideo()
-            return;
+        pine1 = document.querySelector('.pine1')
+        pine1.innerHTML = fridays.length;
+        clickToPlayVideo()
+        return;
     }
 
     inchains.querySelector('.inchains');
@@ -375,51 +375,51 @@ function ToreturnVideostoPlaylist() {
     pine1.innerHTML = InternalVideo.length;
     clickToPlayVideo()
 }
-function clickToPlayVideo(){
-    if(VideoFromStorage() != 0){
+function clickToPlayVideo() {
+    if (VideoFromStorage() != 0) {
         let breakingheartvideo = document.querySelectorAll('.breakingheartvideo');
-            breakingheartvideo.forEach((watkin, drinkup) =>{
-                watkin.addEventListener('click', function(){
-                    video_index = drinkup;
-                    clearInterval(UpDateProgress)
-                    progress_it_self.value = 0;
-                    AudioPlayer.pause();
-                    Sean2 = document.querySelector('.Sean2')
-                    let complain = document.querySelector('.complain')
-                    let mynameis = document.querySelector('.mynameis');
-                    let bcse = createEle('div');
-                        bcse.className = 'rappers stopdripplin';
-                    let x = createEle('div');
-                        x.className = 'guava'
-                        x.innerHTML = `
+        breakingheartvideo.forEach((watkin, drinkup) => {
+            watkin.addEventListener('click', function () {
+                video_index = drinkup;
+                clearInterval(UpDateProgress)
+                progress_it_self.value = 0;
+                AudioPlayer.pause();
+                Sean2 = document.querySelector('.Sean2')
+                let complain = document.querySelector('.complain')
+                let mynameis = document.querySelector('.mynameis');
+                let bcse = createEle('div');
+                bcse.className = 'rappers stopdripplin';
+                let x = createEle('div');
+                x.className = 'guava'
+                x.innerHTML = `
                             <img class="gunshott" src="./icons/icons8-back-48 (4).png" alt="">
                             <img class="gunshott drinkmens" src="./icons/icons8-close-188.png" alt="">
-                        `;  
-                    UpdatevideoProgress = setInterval(setUpdate1, 1000)
-                    videoScreen.src = VideoLocation() + VideoRoot(video_index)
-                    videoScreen.volume = getvolume()
-                    videoScreen.play()
-                    mynameis.innerHTML = VideoRoot(video_index).toString().replace('.mp4', '');
-                    if(complain !== null){
-                        complain.classList.remove('complain')
-                    }
-                    watkin.classList.add('complain');
-                    bcse.append(x)
-                    bcse.append(videoScreen)
-                    Sean2.append(bcse)
-                    XMarktoremve()
-                })
-            });
-            return
+                        `;
+                UpdatevideoProgress = setInterval(setUpdate1, 1000)
+                videoScreen.src = VideoLocation() + VideoRoot(video_index)
+                videoScreen.volume = getvolume()
+                videoScreen.play()
+                mynameis.innerHTML = VideoRoot(video_index).toString().replace('.mp4', '');
+                if (complain !== null) {
+                    complain.classList.remove('complain')
+                }
+                watkin.classList.add('complain');
+                bcse.append(x)
+                bcse.append(videoScreen)
+                Sean2.append(bcse)
+                XMarktoremve()
+            })
+        });
+        return
     }
 }
-function resetcount(){
+function resetcount() {
     musictime1.innerHTML = '00:00:00'
     musictime2.innerHTML = '00:00:00'
 }
-function XMarktoremve(){
+function XMarktoremve() {
     drinkmens = document.querySelector('.drinkmens')
-    drinkmens.addEventListener('click', function(){
+    drinkmens.addEventListener('click', function () {
         let candee = document.querySelector('.rappers')
         let dd = document.querySelector('.guava')
         clearInterval(UpdatevideoProgress)
@@ -429,52 +429,29 @@ function XMarktoremve(){
         dd.remove()
     })
 }
-videoScreen.addEventListener('ended', function(){
+videoScreen.addEventListener('ended', function () {
     let candee = document.querySelector('.rappers')
-        let dd = document.querySelector('.guava')
-        clearInterval(UpdatevideoProgress)
-        progress_it_self.value = 0;
-        resetcount()
-        candee.remove()
-        dd.remove()
+    let dd = document.querySelector('.guava')
+    clearInterval(UpdatevideoProgress)
+    progress_it_self.value = 0;
+    resetcount()
+    candee.remove()
+    dd.remove()
 })
-function clickToPlayFromLIst(){
-    if(LoadFromStorage() != 0){
-        let breakingheart = document.querySelectorAll('.breakingheart');
-        breakingheart.forEach((pre, twopack) => {
-        pre.addEventListener('click', function () {
-            track_index = twopack
-            clearInterval(UpdatevideoProgress)
-            progress_it_self.value = 0;
-            videoScreen.pause()
-            let dovesst = document.querySelector('.dovesst');
-            let mynameis = document.querySelector('.mynameis')
-            UpDateProgress = setInterval(setUpdate, 1000)
-            AudioPlayer.src = MusicLocation() + MusicRoot([track_index]);
-            mynameis.innerHTML = MusicRoot([track_index]).toString().replace('.mp3', '')
-            AudioPlayer.play()
-            AudioPlayer.volume = getvolume();
-            teknoq2.src = './icons/pause.png';
-            if (dovesst !== null) {
-                dovesst.classList.remove('dovesst')
-            }
-            pre.classList.add('dovesst');
-            wizkid = document.querySelector('.wizkid');
-            wizkid.innerHTML = track_index + 1 + '/';
-             })
-        })
-        return
-    }
+function clickToPlayFromLIst() {
+    if (LoadFromStorage() != 0) {
         let breakingheart = document.querySelectorAll('.breakingheart');
         breakingheart.forEach((pre, twopack) => {
             pre.addEventListener('click', function () {
-                track_index = twopack;
+                track_index = twopack
                 clearInterval(UpdatevideoProgress)
+                progress_it_self.value = 0;
+                videoScreen.pause()
                 let dovesst = document.querySelector('.dovesst');
                 let mynameis = document.querySelector('.mynameis')
                 UpDateProgress = setInterval(setUpdate, 1000)
-                AudioPlayer.src = NewMusicRoot() + InternalMusic[track_index].trackName;
-                mynameis.innerHTML = InternalMusic[track_index].trackName.toString().replace('.mp3', '')
+                AudioPlayer.src = MusicLocation() + MusicRoot([track_index]);
+                mynameis.innerHTML = MusicRoot([track_index]).toString().replace('.mp3', '')
                 AudioPlayer.play()
                 AudioPlayer.volume = getvolume();
                 teknoq2.src = './icons/pause.png';
@@ -486,6 +463,29 @@ function clickToPlayFromLIst(){
                 wizkid.innerHTML = track_index + 1 + '/';
             })
         })
+        return
+    }
+    let breakingheart = document.querySelectorAll('.breakingheart');
+    breakingheart.forEach((pre, twopack) => {
+        pre.addEventListener('click', function () {
+            track_index = twopack;
+            clearInterval(UpdatevideoProgress)
+            let dovesst = document.querySelector('.dovesst');
+            let mynameis = document.querySelector('.mynameis')
+            UpDateProgress = setInterval(setUpdate, 1000)
+            AudioPlayer.src = NewMusicRoot() + InternalMusic[track_index].trackName;
+            mynameis.innerHTML = InternalMusic[track_index].trackName.toString().replace('.mp3', '')
+            AudioPlayer.play()
+            AudioPlayer.volume = getvolume();
+            teknoq2.src = './icons/pause.png';
+            if (dovesst !== null) {
+                dovesst.classList.remove('dovesst')
+            }
+            pre.classList.add('dovesst');
+            wizkid = document.querySelector('.wizkid');
+            wizkid.innerHTML = track_index + 1 + '/';
+        })
+    })
 }
 // this function makes the music play after finishing but update is coming for it
 AudioPlayer.addEventListener('ended', function () {
@@ -493,14 +493,14 @@ AudioPlayer.addEventListener('ended', function () {
     NextTrack()
     playing()
 })
-function controlspeeding(){
+function controlspeeding() {
     let jet = localStorage.getItem('Playbackrate');
     AudioPlayer.playbackRate = jet;
 }
 
 function NextTrack() {
-    if(LoadFromStorage() != 0){      
-        if(localStorage.getItem('repeatingTrack') !== null && JSON.parse(localStorage.getItem('repeatingTrack')) == true){
+    if (LoadFromStorage() != 0) {
+        if (localStorage.getItem('repeatingTrack') !== null && JSON.parse(localStorage.getItem('repeatingTrack')) == true) {
             let retr = track_index;
             track_index = retr;
             wizkid.innerHTML = track_index + 1 + '/';
@@ -509,17 +509,17 @@ function NextTrack() {
             playing()
             return;
         }
-        if(localStorage.getItem('randomise') !== null && JSON.parse(localStorage.getItem('randomise')) == true){
+        if (localStorage.getItem('randomise') !== null && JSON.parse(localStorage.getItem('randomise')) == true) {
             is_random = true;
-        }     
-        if (track_index < __get_fromStorage__('ReturnAudio').length - 1 && is_random == false){
+        }
+        if (track_index < __get_fromStorage__('ReturnAudio').length - 1 && is_random == false) {
             track_index += 1;
             wizkid = document.querySelector('.wizkid')
             mynameis = document.querySelector('.mynameis')
             wizkid.innerHTML = track_index + 1 + '/';
             mynameis.innerHTML = MusicRoot(track_index).toString().replace('.mp3', '')
             AudioPlayer.src = MusicLocation() + MusicRoot(track_index)
-        }else if(track_index < __get_fromStorage__('ReturnAudio').length - 1 && is_random == true){
+        } else if (track_index < __get_fromStorage__('ReturnAudio').length - 1 && is_random == true) {
             let randommings = Math.floor(Math.random() * __get_fromStorage__('ReturnAudio').length);
             track_index = randommings;
             wizkid = document.querySelector('.wizkid')
@@ -527,14 +527,14 @@ function NextTrack() {
             wizkid.innerHTML = track_index + 1 + '/';
             mynameis.innerHTML = MusicRoot(track_index).toString().replace('.mp3', '')
             AudioPlayer.src = MusicLocation() + MusicRoot(track_index)
-        }else if(track_index >= __get_fromStorage__('ReturnAudio').length -1 && is_random == false){
+        } else if (track_index >= __get_fromStorage__('ReturnAudio').length - 1 && is_random == false) {
             track_index = 0;
             wizkid = document.querySelector('.wizkid')
             mynameis = document.querySelector('.mynameis')
             wizkid.innerHTML = track_index + 1 + '/';
             mynameis.innerHTML = MusicRoot(track_index).toString().replace('.mp3', '')
-            AudioPlayer.src = MusicLocation() + MusicRoot(track_index) 
-        }else if(track_index >= __get_fromStorage__('ReturnAudio').length - 1 && is_random == true){
+            AudioPlayer.src = MusicLocation() + MusicRoot(track_index)
+        } else if (track_index >= __get_fromStorage__('ReturnAudio').length - 1 && is_random == true) {
             let randommings = Math.floor(Math.random() * __get_fromStorage__('ReturnAudio').length);
             track_index = randommings;
             wizkid = document.querySelector('.wizkid')
@@ -542,14 +542,14 @@ function NextTrack() {
             wizkid.innerHTML = track_index + 1 + '/';
             mynameis.innerHTML = MusicRoot(track_index).toString().replace('.mp3', '')
             AudioPlayer.src = MusicLocation() + MusicRoot(track_index)
-        }else{
-           track_index = 0;
+        } else {
+            track_index = 0;
         }
         currPlay(track_index);
         return;
     }
 
-    if(localStorage.getItem('repeatingTrack') !== null && JSON.parse(localStorage.getItem('repeatingTrack')) == true){
+    if (localStorage.getItem('repeatingTrack') !== null && JSON.parse(localStorage.getItem('repeatingTrack')) == true) {
         let touch = track_index;
         track_index = touch;
         wizkid = document.querySelector('.wizkid')
@@ -560,32 +560,32 @@ function NextTrack() {
         playing()
         return;
     }
-    if(localStorage.getItem('randomise') !== null && JSON.parse(localStorage.getItem('randomise')) == true){
+    if (localStorage.getItem('randomise') !== null && JSON.parse(localStorage.getItem('randomise')) == true) {
         is_random = true;
     }
-    if(track_index < InternalMusic.length - 1 && is_random == false){
+    if (track_index < InternalMusic.length - 1 && is_random == false) {
         track_index += 1;
         wizkid = document.querySelector('.wizkid')
         mynameis = document.querySelector('.mynameis')
         wizkid.innerHTML = track_index + 1 + '/';
         mynameis.innerHTML = InternalMusic[track_index].trackName.toString().replace('.mp3', '')
         AudioPlayer.src = NewMusicRoot() + InternalMusic[track_index].trackName
-    }else if(track_index < InternalMusic.length - 1 && is_random == true){
+    } else if (track_index < InternalMusic.length - 1 && is_random == true) {
         let randomIndex = Math.floor(Math.random() * InternalMusic.length);
         track_index = randomIndex;
         wizkid = document.querySelector('.wizkid')
         mynameis = document.querySelector('.mynameis')
-        wizkid.innerHTML = track_index +1 + '/';
+        wizkid.innerHTML = track_index + 1 + '/';
         mynameis.innerHTML = InternalMusic[track_index].trackName.toString().replace('.mp3', '')
         AudioPlayer.src = NewMusicRoot() + InternalMusic[track_index].trackName
-    }else if(track_index >= InternalMusic.length - 1 && is_random == false){
+    } else if (track_index >= InternalMusic.length - 1 && is_random == false) {
         track_index = 0;
         wizkid = document.querySelector('.wizkid')
         mynameis = document.querySelector('.mynameis')
         wizkid.innerHTML = track_index + 1 + '/';
         mynameis.innerHTML = InternalMusic[track_index].trackName.toString().replace('.mp3', '')
         AudioPlayer.src = NewMusicRoot() + InternalMusic[track_index].trackName
-    }else if(track_index >= InternalMusic.length - 1 && is_random == true){
+    } else if (track_index >= InternalMusic.length - 1 && is_random == true) {
         let randomIndex = Math.floor(Math.random() * InternalMusic.length);
         track_index = randomIndex;
         wizkid = document.querySelector('.wizkid')
@@ -593,11 +593,11 @@ function NextTrack() {
         wizkid.innerHTML = track_index + 1 + '/';
         mynameis.innerHTML = InternalMusic[track_index].trackName.toString().replace('.mp3', '')
         AudioPlayer.src = NewMusicRoot() + InternalMusic[track_index].trackName
-    }else{
+    } else {
         track_index = 0;
     }
-        currPlay(track_index);
-    
+    currPlay(track_index);
+
 }
 
 function currPlay(d) {
@@ -607,86 +607,86 @@ function currPlay(d) {
         list[d].classList.add('dovesst');
     });
 }
-function PlayAllfunction(){
-    if(LoadFromStorage() != 0){
+function PlayAllfunction() {
+    if (LoadFromStorage() != 0) {
         paradisees1 = document.querySelector('.paradisees1')
-        paradisees1.addEventListener('click', function(){
-        mynameis = document.querySelector('.mynameis')
-        wizkid = document.querySelector('.wizkid')
-        if (track_index < __get_fromStorage__('ReturnAudio').length){
-            track_index = 0;
-            AudioPlayer.src = MusicLocation() + MusicRoot(track_index)
-            AudioPlayer.play() 
-            AudioPlayer.volume = getvolume() 
-            UpDateProgress = setInterval(setUpdate, 1000)
-            teknoq2.src = './icons/pause.png';
-            wizkid.innerHTML = track_index +1 + '/';
-            mynameis.innerHTML = MusicRoot(track_index).toString().replace('.mp3', '')
-        }
+        paradisees1.addEventListener('click', function () {
+            mynameis = document.querySelector('.mynameis')
+            wizkid = document.querySelector('.wizkid')
+            if (track_index < __get_fromStorage__('ReturnAudio').length) {
+                track_index = 0;
+                AudioPlayer.src = MusicLocation() + MusicRoot(track_index)
+                AudioPlayer.play()
+                AudioPlayer.volume = getvolume()
+                UpDateProgress = setInterval(setUpdate, 1000)
+                teknoq2.src = './icons/pause.png';
+                wizkid.innerHTML = track_index + 1 + '/';
+                mynameis.innerHTML = MusicRoot(track_index).toString().replace('.mp3', '')
+            }
             currPlay(track_index)
         })
         return;
     }
 
     paradisees1 = document.querySelector('.paradisees1')
-    paradisees1.addEventListener('click', function(){
+    paradisees1.addEventListener('click', function () {
         mynameis = document.querySelector('.mynameis')
         wizkid = document.querySelector('.wizkid')
-        if (track_index < InternalMusic.length){
+        if (track_index < InternalMusic.length) {
             track_index = 0;
             AudioPlayer.src = NewMusicRoot() + InternalMusic[track_index].trackName
             AudioPlayer.play()
-            AudioPlayer.volume = getvolume()   
+            AudioPlayer.volume = getvolume()
             UpDateProgress = setInterval(setUpdate, 1000)
             teknoq2.src = './icons/pause.png';
-            wizkid.innerHTML = track_index +1 + '/';
+            wizkid.innerHTML = track_index + 1 + '/';
             mynameis.innerHTML = InternalMusic[track_index].trackName.toString().replace('.mp3', '')
         }
         currPlay(track_index)
     })
 }
 function NextTrackForAll() {
-if(LoadFromStorage() != 0){
-    
-    if(localStorage.getItem('randomise') !== null && JSON.parse(localStorage.getItem('randomise')) == true){
-        is_random = true;
-    }
-    if(track_index < __get_fromStorage__('ReturnAudio').length - 1 && is_random == false){
-        track_index += 1;
-        wizkid.innerHTML = track_index + 1 + '/';
-        mynameis.innerHTML = MusicRoot(track_index).toString().replace('.mp3', '')
-        AudioPlayer.src = MusicLocation() + MusicRoot(track_index)
-        playing()
-    }else if(track_index < __get_fromStorage__('ReturnAudio').length - 1 && is_random == true){
-        let showmeluv = Math.floor(Math.random() * __get_fromStorage__('ReturnAudio').length)
-        track_index = showmeluv;
-        wizkid.innerHTML = track_index + 1 + '/';
-        mynameis.innerHTML = MusicRoot(track_index).toString().replace('.mp3', '')
-        AudioPlayer.src = MusicLocation() + MusicRoot(track_index)
-        playing()
-    }else if(track_index >= __get_fromStorage__('ReturnAudio').length - 1 && is_random == false){
-        track_index = 0;
-        wizkid.innerHTML = track_index + 1 + '/';
-        mynameis.innerHTML = MusicRoot(track_index).toString().replace('.mp3', '')
-        AudioPlayer.src = MusicLocation() + MusicRoot(track_index)
-        playing()
-    }else if(track_index >= __get_fromStorage__('ReturnAudio').length - 1 && is_random == true){
-        let showmeluv = Math.floor(Math.random() * __get_fromStorage__('ReturnAudio').length)
-        track_index = showmeluv;
-        wizkid.innerHTML = track_index + 1 + '/';
-        mynameis.innerHTML = MusicRoot(track_index).toString().replace('.mp3', '')
-        AudioPlayer.src = MusicLocation() + MusicRoot(track_index)
-        playing()
-    }else{
-        track_index = 0;
-    }
+    if (LoadFromStorage() != 0) {
+
+        if (localStorage.getItem('randomise') !== null && JSON.parse(localStorage.getItem('randomise')) == true) {
+            is_random = true;
+        }
+        if (track_index < __get_fromStorage__('ReturnAudio').length - 1 && is_random == false) {
+            track_index += 1;
+            wizkid.innerHTML = track_index + 1 + '/';
+            mynameis.innerHTML = MusicRoot(track_index).toString().replace('.mp3', '')
+            AudioPlayer.src = MusicLocation() + MusicRoot(track_index)
+            playing()
+        } else if (track_index < __get_fromStorage__('ReturnAudio').length - 1 && is_random == true) {
+            let showmeluv = Math.floor(Math.random() * __get_fromStorage__('ReturnAudio').length)
+            track_index = showmeluv;
+            wizkid.innerHTML = track_index + 1 + '/';
+            mynameis.innerHTML = MusicRoot(track_index).toString().replace('.mp3', '')
+            AudioPlayer.src = MusicLocation() + MusicRoot(track_index)
+            playing()
+        } else if (track_index >= __get_fromStorage__('ReturnAudio').length - 1 && is_random == false) {
+            track_index = 0;
+            wizkid.innerHTML = track_index + 1 + '/';
+            mynameis.innerHTML = MusicRoot(track_index).toString().replace('.mp3', '')
+            AudioPlayer.src = MusicLocation() + MusicRoot(track_index)
+            playing()
+        } else if (track_index >= __get_fromStorage__('ReturnAudio').length - 1 && is_random == true) {
+            let showmeluv = Math.floor(Math.random() * __get_fromStorage__('ReturnAudio').length)
+            track_index = showmeluv;
+            wizkid.innerHTML = track_index + 1 + '/';
+            mynameis.innerHTML = MusicRoot(track_index).toString().replace('.mp3', '')
+            AudioPlayer.src = MusicLocation() + MusicRoot(track_index)
+            playing()
+        } else {
+            track_index = 0;
+        }
         currPlay(track_index);
-    return    
-}
-    if(localStorage.getItem('randomise') !== null && JSON.parse(localStorage.getItem('randomise')) == true){
+        return
+    }
+    if (localStorage.getItem('randomise') !== null && JSON.parse(localStorage.getItem('randomise')) == true) {
         is_random = true;
     }
-    if(track_index < InternalMusic.length - 1 && is_random == false){
+    if (track_index < InternalMusic.length - 1 && is_random == false) {
         track_index += 1;
         wizkid = document.querySelector('.wizkid')
         mynameis = document.querySelector('.mynameis')
@@ -694,7 +694,7 @@ if(LoadFromStorage() != 0){
         mynameis.innerHTML = InternalMusic[track_index].trackName.toString().replace('.mp3', '')
         AudioPlayer.src = NewMusicRoot() + InternalMusic[track_index].trackName
         playing()
-    }else if(track_index < InternalMusic.length - 1 && is_random == true){
+    } else if (track_index < InternalMusic.length - 1 && is_random == true) {
         let randomIndex = Math.floor(Math.random() * InternalMusic.length);
         track_index = randomIndex;
         wizkid = document.querySelector('.wizkid')
@@ -703,7 +703,7 @@ if(LoadFromStorage() != 0){
         mynameis.innerHTML = InternalMusic[track_index].trackName.toString().replace('.mp3', '')
         AudioPlayer.src = NewMusicRoot() + InternalMusic[track_index].trackName
         playing()
-    }else if(track_index >= InternalMusic.length - 1 && is_random == false){
+    } else if (track_index >= InternalMusic.length - 1 && is_random == false) {
         track_index = 0;
         wizkid = document.querySelector('.wizkid')
         mynameis = document.querySelector('.mynameis')
@@ -711,7 +711,7 @@ if(LoadFromStorage() != 0){
         mynameis.innerHTML = InternalMusic[track_index].trackName.toString().replace('.mp3', '')
         AudioPlayer.src = NewMusicRoot() + InternalMusic[track_index].trackName
         playing()
-    }else if(track_index >= InternalMusic.length - 1 && is_random == true){
+    } else if (track_index >= InternalMusic.length - 1 && is_random == true) {
         let randomIndex = Math.floor(Math.random() * InternalMusic.length);
         track_index = randomIndex;
         wizkid = document.querySelector('.wizkid')
@@ -720,13 +720,13 @@ if(LoadFromStorage() != 0){
         mynameis.innerHTML = InternalMusic[track_index].trackName.toString().replace('.mp3', '')
         AudioPlayer.src = NewMusicRoot() + InternalMusic[track_index].trackName
         playing()
-    }else{
+    } else {
         track_index = 0;
     }
     currPlay(track_index);
 }
-function PreviousTrackForAll(){
-    if(LoadFromStorage() != 0){
+function PreviousTrackForAll() {
+    if (LoadFromStorage() != 0) {
         if (track_index > 0) {
             track_index -= 1;
             wizkid = document.querySelector('.wizkid')
@@ -750,69 +750,69 @@ function PreviousTrackForAll(){
     }
     currPlay(track_index);
 }
-function RepeatTracks(){
+function RepeatTracks() {
     Is_repeat ? NoRepeat() : RepeatCurrentTrack();
 }
-function RepeatCurrentTrack(){
+function RepeatCurrentTrack() {
     Is_repeat = true;
     forRepeating.src = './icons/no_repeat.png';
     localStorage.setItem('repeatingTrack', JSON.stringify(true))
 }
-function NoRepeat(){
+function NoRepeat() {
     Is_repeat = false;
     forRepeating.src = './icons/repeat.png';
     localStorage.setItem('repeatingTrack', JSON.stringify(false))
 }
-function toUpdateRepeating(){
+function toUpdateRepeating() {
     Is_repeat = JSON.parse(localStorage.getItem('repeatingTrack'))
-    if(Is_repeat == true){
+    if (Is_repeat == true) {
         forRepeating.src = './icons/no_repeat.png';
-    }else{
+    } else {
         forRepeating.src = './icons/repeat.png';
     }
 }
-function PlayingRandomMode(){
+function PlayingRandomMode() {
     is_random = true;
     forRandomNaN.src = './icons/shuffle.png';
     localStorage.setItem('randomise', JSON.stringify(true))
 }
-function NotPlayingRandomMode(){
+function NotPlayingRandomMode() {
     is_random = false;
     forRandomNaN.src = './icons/exchnage.png';
     localStorage.setItem('randomise', JSON.stringify(false))
 }
-function randomMiseTrack(){
+function randomMiseTrack() {
     is_random ? NotPlayingRandomMode() : PlayingRandomMode();
 }
-function ToupdateRandom_Logo(){
+function ToupdateRandom_Logo() {
     is_random = JSON.parse(localStorage.getItem('randomise'))
-    if(is_random == true){
+    if (is_random == true) {
         forRandomNaN.src = './icons/shuffle.png';
-    }else{
+    } else {
         forRandomNaN.src = './icons/exchnage.png';
     }
 }
 function setUpdate1() {
-        let seekpositionee = 0;
-        if (!isNaN(videoScreen.duration)) {
-            seekpositionee = videoScreen.currentTime * (100 / videoScreen.duration)
-            progress_it_self.value = seekpositionee;
-    
-            let currentMin = Math.floor(videoScreen.currentTime / 60);
-            let currentSec = Math.floor(videoScreen.currentTime - currentMin * 60);
-    
-            let durationMin = Math.floor(videoScreen.duration / 60);
-            let durationSec = Math.floor(videoScreen.duration - durationMin * 60);
-    
-            if (currentMin < 10) { currentMin = '0' + currentMin }
-            if (currentSec < 10) { currentSec = '0' + currentSec }
-    
-            if (durationMin < 10) { durationMin = '0' + durationMin }
-            if (durationSec < 10) { durationSec = '0' + durationSec }
-    
-            musictime1.innerHTML = currentMin + ':' + currentSec;
-            musictime2.innerHTML = durationMin + ':' + durationSec;
-        }
+    let seekpositionee = 0;
+    if (!isNaN(videoScreen.duration)) {
+        seekpositionee = videoScreen.currentTime * (100 / videoScreen.duration)
+        progress_it_self.value = seekpositionee;
+
+        let currentMin = Math.floor(videoScreen.currentTime / 60);
+        let currentSec = Math.floor(videoScreen.currentTime - currentMin * 60);
+
+        let durationMin = Math.floor(videoScreen.duration / 60);
+        let durationSec = Math.floor(videoScreen.duration - durationMin * 60);
+
+        if (currentMin < 10) { currentMin = '0' + currentMin }
+        if (currentSec < 10) { currentSec = '0' + currentSec }
+
+        if (durationMin < 10) { durationMin = '0' + durationMin }
+        if (durationSec < 10) { durationSec = '0' + durationSec }
+
+        musictime1.innerHTML = currentMin + ':' + currentSec;
+        musictime2.innerHTML = durationMin + ':' + durationSec;
+    }
 }
 
 function setUpdate() {
@@ -837,11 +837,12 @@ function setUpdate() {
         musictime2.innerHTML = durationMin + ':' + durationSec;
     }
 }
-function MusicRoot(d){
+
+function MusicRoot(d) {
     music_list = LoadFromStorage();
     return music_list[d]
 }
-function VideoRoot(t){
+function VideoRoot(t) {
     video_list = VideoFromStorage()
     return video_list[t]
 }
@@ -851,10 +852,10 @@ function MusicLocation() {
 function VideoLocation() {
     return 'C:/Users/UTITOFON PC/Videos/'
 }
-function NewMusicRoot(){
+function NewMusicRoot() {
     return './Ulimited_Musics/'
 }
-function NewVideoRoot(){
+function NewVideoRoot() {
     return './Ulimited_Videos/'
 }
 function LoadFromStorage() {
@@ -887,14 +888,14 @@ function pausing() {
 }
 function ForwardBackward() {
     let Tap = location.hash
-    if(Tap === '#Music'){
+    if (Tap === '#Music') {
         let seek = AudioPlayer.duration * (progress_it_self.value / 100);
         AudioPlayer.currentTime = seek;
-    }else if(Tap === '#Video'){
+    } else if (Tap === '#Video') {
         let seek = videoScreen.duration * (progress_it_self.value / 100);
         videoScreen.currentTime = seek;
     }
-    
+
 }
 function volumePanel() {
     let akd = document.querySelector('.akd')
@@ -928,7 +929,7 @@ function volumeproperty() {
     let volume = AudioPlayer.volume = volume1.value / 100;
     this.localStorage.setItem('play_vaolume', volume);
 }
-function getvolume(){
+function getvolume() {
     let vol = '';
     if (localStorage.getItem('play_vaolume') !== null) {
         vol = parseFloat(this.localStorage.getItem('play_vaolume'));
@@ -948,12 +949,12 @@ function updateVolumeSlider() {
 }
 function on() {
     onmy = document.querySelector('.onmy')
-    onmy.addEventListener('click', function(){
-       let superman = document.querySelector('.superman')
-        if(superman.classList.contains('justof')){
+    onmy.addEventListener('click', function () {
+        let superman = document.querySelector('.superman')
+        if (superman.classList.contains('justof')) {
             superman.classList.remove('justof')
             superman.classList.add('fansyon')
-        }else{
+        } else {
             superman.classList.add('justof')
             superman.classList.remove('fansyon')
         }
@@ -962,8 +963,8 @@ function on() {
 function speedmethod() {
     let speed_progree = createEle('div');
     appolo = document.querySelector('.appolo')
-        speed_progree.className = 'superman justof fansyon'
-        speed_progree.innerHTML =  `
+    speed_progree.className = 'superman justof fansyon'
+    speed_progree.innerHTML = `
                 <div class="speedman1">
                     <div class="speedman2">
                         <p>F</p>
@@ -977,44 +978,44 @@ function speedmethod() {
                     </div>
                 </div>
             `;
-            appolo.append(speed_progree)
+    appolo.append(speed_progree)
 }
-function speedmeters(){
+function speedmeters() {
     civilmeter = document.querySelector('.civilmeter');
     let speedmode = AudioPlayer.playbackRate = civilmeter.value / 100;
     localStorage.setItem('Playbackrate', speedmode);
 }
-function DropdownMan(){
+function DropdownMan() {
     alright = document.querySelector('.alright')
     let london = createEle('div');
-        london.className = 'london offuin oniun';
-        london.innerHTML = `
+    london.className = 'london offuin oniun';
+    london.innerHTML = `
             <p class="formation" komansa="A-Z">A-Z</p>
             <p class="formation" komansa="Title">Title</p>
             <p class="formation" komansa="Artist">Artist</p>
             <p class="formation" komansa="Data modified">Data modified</p>
         `;
-        alright.append(london)
-        dropDownList()
-        Asake2_30()
+    alright.append(london)
+    dropDownList()
+    Asake2_30()
 }
-function dropDownList(){
+function dropDownList() {
     alright = document.querySelector('.alright')
-    alright.addEventListener('click', function(){
-    london = document.querySelector('.london')
-        if(london.classList.contains('offuin')){
+    alright.addEventListener('click', function () {
+        london = document.querySelector('.london')
+        if (london.classList.contains('offuin')) {
             london.classList.remove('offuin')
             london.classList.add('oniun')
-        }else{
+        } else {
             london.classList.add('offuin')
             london.classList.remove('oniun')
         }
     })
 }
-function Asake2_30(){
+function Asake2_30() {
     formation = document.querySelectorAll('.formation');
-    formation.forEach((paie)=>{
-        paie.addEventListener('click', function(){
+    formation.forEach((paie) => {
+        paie.addEventListener('click', function () {
             slapPolice = document.querySelector('.slapPolice');
             let mammay = paie.getAttribute('komansa');
             slapPolice.innerHTML = mammay;
@@ -1023,16 +1024,16 @@ function Asake2_30(){
         })
     })
 }
-function mysort(){
-   return localStorage.getItem('utibestlimitedSort');
+function mysort() {
+    return localStorage.getItem('utibestlimitedSort');
 }
 volumePanel();
 speedmethod()
 updateVolumeSlider()
-if(localStorage.getItem('randomise') == null){
+if (localStorage.getItem('randomise') == null) {
     localStorage.setItem('randomise', JSON.stringify(is_random))
 }
-if(localStorage.getItem('repeatingTrack') == null){
+if (localStorage.getItem('repeatingTrack') == null) {
     localStorage.setItem('repeatingTrack', JSON.stringify(Is_repeat))
 }
 window.onload = function () {
@@ -1041,14 +1042,14 @@ window.onload = function () {
     ToupdateRandom_Logo()
     toUpdateRepeating()
 }
-window.addEventListener('keydown', function(event){
-    if(event.keyCode == 39){
+window.addEventListener('keydown', function (event) {
+    if (event.keyCode == 39) {
         NextTrackForAll()
     }
-    else if(event.keyCode == 32){
+    else if (event.keyCode == 32) {
         WowAmplaying()
     }
-    else if(event.keyCode == 37){
+    else if (event.keyCode == 37) {
         PreviousTrackForAll()
     }
 })
@@ -1082,3 +1083,120 @@ function removeidiot() {
     let termintorw = document.querySelector('.termintorw')
     termintorw.remove()
 }
+
+
+
+
+
+
+
+
+// // Delete after now 
+// const DIR = "C:/Users/UTITOFON PC/Music/";
+// let media = [
+//     {
+//         src: "//",
+//         type: "audio"
+//     },
+//     {
+//         src: "//",
+//         type: "audio"
+//     },
+//     {
+//         src: "//",
+//         type: "audio"
+//     },
+//     {
+//         src: "//",
+//         type: "audio"
+//     }
+// ]
+
+
+// // Player Section 
+
+// let Player = function () {
+//     this.isPlaying = false;
+//     this.media = []
+// }
+// Player.prototype.getMedia = function (type = null) {
+//     this.media = [...media, ...localStorage.getItem('media')];
+//     return type ? this.media.filter(e => e.type == type) : this.media;
+// }
+// Player.prototype.stop = function () {
+//     if (this.isPlaying) {
+//         switch (this.type) {
+//             case "audio":
+//                 // Logic to stop audio
+//                 break;
+
+//             case "video":
+//                 // Logic to stop video
+//                 ;
+//         }
+//     }
+// }
+// Player.prototype.play = function (el) {
+//     this.stop();
+//     switch (el.type) {
+//         case "audio":
+//             // Logic to play audio
+//             break;
+
+//         case "video":
+//             // Logic to play video
+//             ;
+//     }
+// }
+// let VLC = new Player()
+// // End Player Section 
+
+// let pages = document.querySelectorAll(".pages .page");
+// let Browser = function (page = "index") {
+//     this.page = page
+// }
+
+// Browser.prototype.init = function () {
+//     let pages = document.querySelectorAll(".pages .page")
+//         .map(page =>
+//             `<a href="#" onclick="loadPage(this)"> <img src="${pages.dataset.icon}" alt=""> ${pages.dataset.ancohr}</a>`
+//         )
+//     document.querySelector("aside nav").innerHTML = pages
+// }
+
+// let loadPage = e => {
+//     e.preventDefault();
+//     let callback = e.target.dataset.url;
+//     document.querySelector("main").innerHTML = document.querySelector(`[data-url="${callback}"]`)
+//     callback();
+// }
+
+// // Controller callbacks
+// let index = () => {
+
+// }
+// let music = () => {
+//     let audio = VLC.getMedia('audio')
+//     audio.forEach(el => {
+//         let audioPlaceHolder = document.createElement("a")
+//         audioPlaceHolder.dataset.src = el.src
+//         audioPlaceHolder.onclick = (a) => {
+//             Player.play(a)
+//         }
+//     })
+
+// }
+// let video = () => {
+//     let videos = VLC.getMedia('video')
+//     videos.forEach(el => {
+//         let audioPlaceHolder = document.createElement("a")
+//         audioPlaceHolder.dataset.src = el.src
+//         audioPlaceHolder.onclick = (a) => {
+//             Player.play(a)
+//         }
+//     })
+// }
+// // End Controller callbacks
+
+// (new Browser).init();
+// // End delete
